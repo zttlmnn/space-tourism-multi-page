@@ -1,0 +1,21 @@
+.destination-view {
+  padding-top: calc(var(--base-unit) * 3.5);
+  height: 100vh;
+  background: center/cover no-repeat url('../../assets/destination/background-destination-mobile.jpg');
+
+  span {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--clr-contrast);
+    opacity: .25;
+    letter-spacing: .27rem;
+    width: 1.8rem;
+    margin-right: calc(var(--base-unit) * .5);
+  }
+
+
+  h5 {
+    color: var(--clr-contrast);
+  }
+
+}

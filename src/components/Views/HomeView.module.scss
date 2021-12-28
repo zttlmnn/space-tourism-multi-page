@@ -1,0 +1,32 @@
+.home-view {
+  padding-top: 8.8rem; // height of the header
+  padding-left: var(--base-unit);
+  padding-right: var(--base-unit);
+  background: bottom/cover no-repeat url('../../assets/home/background-home-mobile.jpg');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  h5 {
+    margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
+  }
+  
+  h1 {
+    margin-bottom: calc(var(--base-unit) * 1.75);
+  }
+
+  button {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    border: none;
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    margin: calc(var(--base-unit) * 3.5) 0 calc(var(--base-unit) * 2);
+  }
+}
+
