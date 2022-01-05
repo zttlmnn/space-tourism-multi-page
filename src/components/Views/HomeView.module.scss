@@ -2,6 +2,7 @@
   padding-top: 8.8rem; // height of the header
   padding-left: var(--base-unit);
   padding-right: var(--base-unit);
+  height: 100vh;
   background: bottom/cover no-repeat url('../../assets/home/background-home-mobile.jpg');
 
   display: flex;
@@ -11,12 +12,26 @@
 
   h5 {
     margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
+    font-family: var(--ff-subheading-secondary);
+    color: var(--clr-secondary);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.27rem;  
+    text-transform: uppercase;
   }
   
   h1 {
     margin-bottom: calc(var(--base-unit) * 1.75);
+    font-size: 8rem;
+    font-weight: 400;
+    font-family: var(--ff-heading);
+
   }
 
+  p {
+    line-height: 2.5rem;
+    padding-bottom: calc(var(--base-unit) * 1.5);
+  }
   button {
     width: 15rem;
     height: 15rem;

@@ -1,4 +1,95 @@
 .technology-view {
+  padding-top: calc(var(--base-unit) * 3.5);
+  padding-left: var(--base-unit);
+  padding-right: var(--base-unit);
   height: 100vh;
   background: center/cover no-repeat url('../../assets/technology/background-technology-mobile.jpg');
+  
+
+  &__intro {
+    display: flex;
+    justify-content: center;
+    font-family: var(--ff-subheading-secondary);
+    font-size: 1.6rem;
+    letter-spacing: 0.27rem;
+
+    span {
+      font-weight: 700;
+      opacity: 0.25;
+    }
+
+    h2 {
+      font-size: inherit;
+      margin-left: calc(var(--base-unit) * 0.5);
+    }
+  }
+
+  &__img {
+    height: 17rem;
+    margin-top: calc(var(--base-unit) * 1.25);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--clr-stroke);
+
+    img {
+      display: block;
+      width: auto;
+      height: 17rem;
+      object-fit: cover;
+    }
+  }
+
+  &__btns {
+    width: calc(var(--base-unit) * 6.25);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: calc(var(--base-unit) * 1.5) 0;
+
+  }
+  &__btn {
+      cursor: pointer;
+      height: 4rem;
+      width: 4rem;
+      color: var(--clr-contrast);
+      font-size: 1.6rem;
+      font-family: var(--ff-heading);
+      background: transparent;
+      border-radius: 100%;
+      border: 1px solid hsla(0, 0%, 100%, 0.25);
+      
+    
+      
+      &--active {
+        color: var(--clr-primary);
+        background: var(--clr-contrast);
+        opacity: 1;
+      }
+    }
+
+  &__info {
+    text-align: center;
+    
+    h3 {
+      font-size: 1.6rem;
+      letter-spacing: .25rem;
+      font-family: var(--ff-subheading-secondary);
+      color: var(--clr-secondary);
+      padding-bottom: calc(var(--base-unit) * .5);
+    }
+    
+    h1 {
+      font-family: var(--ff-heading);
+      font-size: 2.4rem;
+      padding-bottom: calc(var(--base-unit) * 1.25);
+      
+    }
+    p {
+      line-height: 2.5rem;
+    }
+  }
+
+
+
 }
+

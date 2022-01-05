@@ -1,21 +1,99 @@
 .destination-view {
   padding-top: calc(var(--base-unit) * 3.5);
-  height: 100vh;
-  background: center/cover no-repeat url('../../assets/destination/background-destination-mobile.jpg');
+  padding-left: var(--base-unit);
+  padding-right: var(--base-unit);
+  padding-bottom: calc(var(--base-unit) * 2.75);
+  background: center/cover no-repeat
+    url("../../assets/destination/background-destination-mobile.jpg");
 
-  span {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--clr-contrast);
-    opacity: .25;
-    letter-spacing: .27rem;
-    width: 1.8rem;
-    margin-right: calc(var(--base-unit) * .5);
+  &__intro {
+    display: flex;
+    justify-content: center;
+    font-family: var(--ff-subheading-secondary);
+    font-size: 1.6rem;
+    letter-spacing: 0.27rem;
+
+    span {
+      font-weight: 700;
+      opacity: 0.25;
+    }
+
+    h2 {
+      font-size: inherit;
+      margin-left: calc(var(--base-unit) * 0.5);
+    }
   }
 
+  &__img {
+    margin: calc(var(--base-unit) * 1.25) 0;
+    display: flex;
+    justify-content: center;
 
-  h5 {
-    color: var(--clr-contrast);
+    img {
+      width: 17rem;
+      height: 17rem;
+    }
+  }
+
+  &__btns {
+    width: calc(var(--base-unit) * 10);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  &__btn {
+      cursor: pointer;
+      color: var(--clr-secondary);
+      background: none;
+      font-size: 1.4rem;
+      font-family: var(--ff-btn);
+      border: none;
+      padding-bottom: calc(var(--base-unit) * .5);
+      border-bottom: 3px solid transparent;
+
+      text-transform: uppercase;
+      letter-spacing: 0.27rem;
+
+      &--active {
+        color: var(--clr-contrast);
+        border-bottom: 3px solid var(--clr-contrast);
+      }
+    }
+
+  &__description {
+    text-align: center;
+    
+    h2 {
+      font-size: 5.6rem;
+      font-family: var(--ff-heading);
+      padding-top: calc(var(--base-unit) * 1.25);
+
+    }
+    p {
+      line-height: 2.5rem;
+      padding-bottom: calc(var(--base-unit) * 1.5);
+      border-bottom: 1px solid var(--clr-stroke);
+    }
+  }
+
+  &__details {
+    text-align: center;
+    padding-top: calc(var(--base-unit) * 1.5);
+
+    h4 {
+      font-size: 1.4rem;
+      font-family: var(--ff-btn);
+      letter-spacing: .25rem;
+      color: var(--clr-secondary);
+      padding-bottom: calc(var(--base-unit) * .5);
+    }
+
+    h3 {
+      font-family: var(--ff-heading);
+      font-size: 2.8rem;
+      padding-bottom: calc(var(--base-unit) * 1.25);
+    }
   }
 
 }

@@ -1,40 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import DestinationView from '../components/Views/DestinationView';
-import useFetchData from '../hooks/use-fetch';
-import { getData } from '../lib/api';
-
-const Destination  = () => {
-
-  const { fetchData, data } = useFetchData(getData);
+/* import useFetchData from '../hooks/use-fetch';
+ */
+const Destination: FC = () => {
+const [data, setData] = useState([]);
+const [isLoading, setisLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    fetchData();
+    const fetchData = async () => {
+      const response = await fetch('/data.json')
+      const data = await response.json()
+      console.log(data.destinations[0]);
+      setData(data.destinations)
+      setisLoading(false)
 
-  }, [fetchData]);
+    }
+    fetchData()
+    
 
-  
+  }, [])
 
- // const destinationsData = data.filter(arr => arr.id === "destinations")
- 
- const destinationsData = data;
- //const keys = Object.keys(destinationsData)
-
- //console.log(values); // [ARR DESTINATION, ARR CREW, ARR TECHNOLOGY]
- ////console.log(values[0]); // [ARR DESTINATION]
-
-
-console.log(destinationsData);
-const dataArr  = Object.values(destinationsData)
-console.log(dataArr[0]);
-const filtered = dataArr[0]
-console.log(filtered);
+if (isLoading) {
+  return <section>
+    <p>LOADING...</p>
+  </section>
+}
 
 
 // console.log(keys); // ['destinations', 'crew', 'technology']
 
 
 
-  return <DestinationView /* destinationsData={destinationsData} */ />
+  return <DestinationView destinationsData={data} />
 }
 
 export default Destination;
