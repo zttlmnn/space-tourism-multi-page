@@ -1,4 +1,6 @@
 
+@import '../../index.scss';
+
 %nav-btn {
   position: relative;
   z-index: 10;
@@ -44,6 +46,9 @@
   &__nav-btn {
     @extend %nav-btn;
 
+    @media (min-width: 768px) {
+      display: none;
+    }
 
     &::before {
       @extend %line;
@@ -58,7 +63,6 @@
     &--close {
       @extend %nav-btn;
 
- 
       background: transparent;
 
       &::before {

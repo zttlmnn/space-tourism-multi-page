@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import styles from './Header.module.scss'
-import { Link, Route } from 'react-router-dom'
-import Navigation from '../Navigation/Navigation'
+import { useState } from 'react';
+import styles from './Header.module.scss';
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { Link } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState<boolean>(false);
 
+  const mediaQuery = useMediaQuery("(min-width: 48em)");
+
   const showNavigationHandler = () => {
     setShowNavigation(prev => !prev)
   }
+
 
 /*   const cssBtnStyles = [styles['header__nav-btn'], showNavigation ? styles['header__nav-btn--close'] : '']
  */
@@ -20,7 +24,7 @@ const Header = () => {
           className={!showNavigation ? styles['header__nav-btn'] : styles['header__nav-btn--close'] } 
           onClick={showNavigationHandler} />
       </div>
-      {showNavigation && <Navigation closeNavigation={showNavigationHandler} />}
+      {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />}
     </header>
   )
 }

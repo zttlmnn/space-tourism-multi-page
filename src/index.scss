@@ -12,7 +12,12 @@
   --clr-secondary: #D0D6F9;
   --clr-contrast: #ffffff;
   --clr-stroke: #383B4B;
+
+/*   --tablet-breakpoint: 768px;
+ */
 }
+// 768 px / 1.6 = 48em
+$bp-tablet: 48em;
 
 * {
   margin: 0;
@@ -59,7 +64,6 @@ h4 {
 p { 
   font-family: var(--ff-body-text);
   color: var(--clr-secondary);
-  font-size: 1.5rem;
   text-align: center;
 }
 
