@@ -20,9 +20,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles['header__container']}>
         <Link to="/" className={styles['header__logo']} />
-        <button 
+        {!mediaQuery && <button 
           className={!showNavigation ? styles['header__nav-btn'] : styles['header__nav-btn--close'] } 
-          onClick={showNavigationHandler} />
+          onClick={showNavigationHandler} />}
       </div>
       {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />}
     </header>

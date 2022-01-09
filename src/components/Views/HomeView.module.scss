@@ -1,20 +1,50 @@
+@import '../../index.scss';
+
 .home-view {
-  padding-top: 8.8rem; // height of the header
+  // height of the header
   padding-left: var(--base-unit);
   padding-right: var(--base-unit);
+  // fixing height ???
   height: 100vh;
   background: bottom/cover no-repeat url('../../assets/home/background-home-mobile.jpg');
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-
-  @media (min-width: 768px) {
+  @media (min-width: $bp-tablet) {
+    padding-left: calc(var(--base-unit) * 1.75);
+    padding-right: calc(var(--base-unit) * 1.75);
     background: bottom/cover no-repeat url('../../assets/home/background-home-tablet.jpg');
-    backdrop-filter: screen;
   }
 
+  @media (min-width: $bp-desktop) {
+    background: bottom/cover no-repeat url('../../assets/home/background-home-desktop.jpg');
+
+
+
+  }
+
+  &__flex-container {
+    max-width: 110rem;
+    margin: 0 auto;
+    padding-top: calc(var(--base-unit) * 3.5);
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $bp-tablet) {
+      padding-top: calc(var(--base-unit) * 8.25);
+    }
+    @media (min-width: $bp-desktop) {
+      padding-top: calc(var(--base-unit) * 16.25);
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+  
+    }
+  }
 
   h5 {
     margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
@@ -24,10 +54,17 @@
     font-weight: 400;
     letter-spacing: 0.27rem;  
     text-transform: uppercase;
+
+    text-align: center;
     
-    @media (min-width: 768px) {
+    @media (min-width: $bp-tablet) {
       font-size: 2rem;
     }
+
+    @media (min-width: $bp-desktop) {
+      font-size: 2.8rem;
+    }
+
   }
   
   h1 {
@@ -35,10 +72,10 @@
     font-size: 8rem;
     font-weight: 400;
     font-family: var(--ff-heading);
+    text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: $bp-tablet) {
       font-size: 15rem;
-
     }
 
   }
@@ -49,9 +86,19 @@
     line-height: 2.5rem;
     padding-bottom: calc(var(--base-unit) * 1.5);
 
-    @media (min-width: 768px) {
+    @media (min-width: $bp-tablet) {
       font-size: 1.6rem;
       line-height: 2.8rem;
+    }
+
+    @media (min-width: $bp-tablet) {
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+    }
+
+    @media (min-width: $bp-desktop) {
+      padding-bottom: 0;
+      text-align: left;
     }
   }
   button {
@@ -65,12 +112,19 @@
     text-transform: uppercase;
     margin: calc(var(--base-unit) * 3.5) 0 calc(var(--base-unit) * 2);
 
-    @media (min-width: 768px) {
+    @media (min-width: $bp-tablet) {
       width: 24rem;
       height: 24rem;
       font-size: 3.2rem;
+      margin: calc(var(--base-unit) * 6.5) 0 calc(var(--base-unit) * 3.75);
+    }
 
+    @media (min-width: $bp-desktop) {
+      width: 27.4rem;
+      height: 27.4rem;
+      margin: 0;
     }
   }
+
 }
 

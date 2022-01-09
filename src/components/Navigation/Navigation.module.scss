@@ -8,14 +8,20 @@
   background: rgba(255, 255, 255, 0.048);
   backdrop-filter: blur(2rem);
 
-  @media (min-width: $bp-tablet) {
-    
-  }
-
   width: 25.4rem;
   height: 100vh;
   padding-top: calc(var(--base-unit) * 5);
   padding-left: calc(var(--base-unit) * 1.25);
+
+  @media (min-width: $bp-tablet) {
+    width: auto;
+    height: 9.6rem;
+    padding: calc(var(--base-unit) * 1.5);
+  }
+
+  @media (min-width: $bp-desktop) {
+    width: 83rem;
+  }
   
   &__container {
 
@@ -23,11 +29,18 @@
       display: flex;
       flex-direction: column;
       gap: calc(var(--base-unit) * 1.5);
+
+      @media (min-width: $bp-tablet) {
+        flex-direction: row;
+      }
+      @media (min-width: $bp-tablet) {
+        gap: calc(var(--base-unit) * 2);
+      }
     }
 
     li {
+      // position value for the active indicator
       position: relative;
-
     }
 
   }
@@ -39,6 +52,14 @@
     text-transform: uppercase;
     color: var(--clr-contrast);
     text-decoration: none;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 1.4rem;
+    }
+
+    @media (min-width: $bp-tablet) {
+      font-size: 1.6rem;
+    }
 
     span {
       display: inline-block;
@@ -60,6 +81,13 @@
         width: 4px;
         height: calc(var(--base-unit) * 1.25);
         background: var(--clr-contrast);
+
+        @media (min-width: $bp-tablet) {
+          right: auto;
+          width: 100%;
+          height: 3px;
+          bottom: calc(var(--base-unit) * -1.75);
+        }
       }
     }
   }

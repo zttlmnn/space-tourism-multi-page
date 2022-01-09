@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 import styles from "./Navigation.module.scss";
 
@@ -12,6 +13,9 @@ const Navigation: FC<Props> = (props) => {
     styles["navigation__link"],
     styles["navigation__link--active"],
   ];
+
+  const mediaQueryTablet = useMediaQuery("(min-width: 48em)");
+  const mediaQueryDesktop = useMediaQuery("(min-width: 90em)");
 
   console.log(cssLinkActive.join(" "));
   return (
@@ -26,7 +30,7 @@ const Navigation: FC<Props> = (props) => {
               }
               onClick={props.closeNavigation}
             >
-              <span>00</span>Home
+              {(!mediaQueryTablet || mediaQueryDesktop) && <span>00</span>}Home
             </NavLink>
           </li>
           <li>
@@ -37,7 +41,7 @@ const Navigation: FC<Props> = (props) => {
               }
               onClick={props.closeNavigation}
             >
-              <span>01</span>Destination
+              {(!mediaQueryTablet || mediaQueryDesktop) && <span>01</span>}Destination
             </NavLink>
           </li>
           <li>
@@ -48,18 +52,18 @@ const Navigation: FC<Props> = (props) => {
               }
               onClick={props.closeNavigation}
             >
-              <span>02</span>Crew
+              {(!mediaQueryTablet || mediaQueryDesktop) && <span>02</span>}Crew
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink 
               to="/technology"
               className={({ isActive }) =>
                 !isActive ? styles["navigation__link"] : cssLinkActive.join(" ")
               }
               onClick={props.closeNavigation}
             >
-              <span>03</span>Technology
+              {(!mediaQueryTablet || mediaQueryDesktop) && <span>03</span>}Technology
             </NavLink>
           </li>
         </ul>
