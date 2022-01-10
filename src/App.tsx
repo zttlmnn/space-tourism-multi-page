@@ -7,6 +7,7 @@ const App = () => {
     <div className={styles.app}>
       <Header />
       <main>
+        
         <Outlet />
       </main>
     </div>
