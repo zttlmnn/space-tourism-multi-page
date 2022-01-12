@@ -2,6 +2,9 @@ import { FC, useState } from "react";
 import { DestinationsData } from "../models/data-model";
 import styles from "./DestinationView.module.scss";
 
+import Title from "../Utilities/Title";
+import Description from "../Utilities/Description";
+
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
   props
 ) => {
@@ -29,20 +32,18 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
     <div className={styles["destination-view"]}>
       <div className={styles["destination-view__flex-container"]}>
         <div className={styles["destination-view__flex-item"]}>
-          <div className={styles["destination-view__intro"]}>
-            <span>01</span>
-            <h2>Pick your destination</h2>
-          </div>
-          <div className={styles["destination-view__img"]}>
+      <Title index="01" title="Pick your destination" />
+
+          <figure className={styles["destination-view__img"]}>
             <img
               src={`${process.env.PUBLIC_URL}../../${props.destinationsData[destination].images.png}`}
               //src="../../assets/destination/image-moon.png"
               alt=""
             />
-          </div>
+          </figure>
         </div>
         <div className={styles["destination-view__flex-item"]}>
-          <div className={styles["destination-view__btns"]}>
+          <section className={styles["destination-view__btns"]}>
             <button
               onClick={destinationHandler.bind(null, 0)}
               className={
@@ -75,12 +76,12 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
             >
               Titan
             </button>
-          </div>
-          <div className={styles["destination-view__description"]}>
+          </section>
+          <section className={styles["destination-view__description"]}>
             <h2>{props.destinationsData[destination].name}</h2>
-            <p>{props.destinationsData[destination].description}</p>
-          </div>
-          <div className={styles["destination-view__details"]}>
+              <Description text={props.destinationsData[destination].description}/>
+          </section>
+          <section className={styles["destination-view__details"]}>
             <div>
               <h4>Avg. distance</h4>
               <h3>{props.destinationsData[destination].distance}</h3>
@@ -89,7 +90,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
               <h4>Est. travel time</h4>
               <h3>{props.destinationsData[destination].travel}</h3>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>

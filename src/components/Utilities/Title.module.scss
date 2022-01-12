@@ -1,0 +1,29 @@
+@import '../../index.scss';
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-family: var(--ff-subheading-secondary);
+  font-size: 1.6rem;
+  letter-spacing: 0.27rem;
+
+  max-width: 57.3rem;   
+  margin: 0 auto;
+
+
+  @media (min-width: $bp-tablet) {
+    font-size: 2rem;
+    justify-content: flex-start;
+    margin-bottom: calc(var(--base-unit) * 2.5);
+  }
+
+  span {
+    font-weight: 700;
+    opacity: 0.25;
+  }
+
+  h2 {
+    font-size: inherit;
+    margin-left: calc(var(--base-unit) * 0.5);
+  }
+}

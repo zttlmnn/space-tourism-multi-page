@@ -78,27 +78,6 @@
 
   }
 
-  p {
-    max-width: 44rem;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    padding-bottom: calc(var(--base-unit) * 1.5);
-
-    @media (min-width: $bp-tablet) {
-      font-size: 1.6rem;
-      line-height: 2.8rem;
-    }
-
-    @media (min-width: $bp-tablet) {
-      font-size: 1.8rem;
-      line-height: 3.2rem;
-    }
-
-    @media (min-width: $bp-desktop) {
-      padding-bottom: 0;
-      text-align: left;
-    }
-  }
   button {
     width: 15rem;
     height: 15rem;

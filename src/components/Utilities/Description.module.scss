@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.text {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding-bottom: calc(var(--base-unit) * 1.5);
+  border-bottom: 1px solid var(--clr-stroke);
+
+  @media (min-width: $bp-tablet) {
+    max-width: 57.3rem;   
+    margin: 0 auto;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+
+    padding: var(--base-unit) 0 calc(var(--base-unit) * 2.25);
+  }
+
+  @media (min-width: $bp-desktop) {
+    max-width: 44rem;   
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+
+    text-align: left;
+  }
+}

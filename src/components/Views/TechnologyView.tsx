@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import { TechnologyData } from "../models/data-model";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import styles from "./TechnologyView.module.scss";
+import Title from "../Utilities/Title";
+import Description from "../Utilities/Description";
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   const [technology, setTechnology] = useState<number>(0);
@@ -22,22 +24,19 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
     <div className={styles["technology-view"]}>
       <div className={styles["technology-view__grid-container"]}>
       <div className={styles["technology-view__grid-title"]}>
-        <div className={styles["technology-view__title"]}>
-          <span>03</span>
-          <h2>Space Launch 101</h2>
-        </div>
+        <Title index="03" title="Space Launch 101" />
       </div>
       <div className={styles["technology-view__grid-img"]}>
-        <div className={styles["technology-view__img"]}>
+        <figure className={styles["technology-view__img"]}>
           <img
             src={imgFormat}
             //src="../../assets/technology/image-moon.png"
             alt=""
           />
-        </div>
+        </figure>
       </div>
       <div className={styles["technology-view__grid-btns"]}>
-        <div className={styles["technology-view__btns"]}>
+        <section className={styles["technology-view__btns"]}>
           <button
             onClick={technologyChangeHandler.bind(null, 0)}
             className={
@@ -62,15 +61,15 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           >
             3
           </button>
-        </div>
+        </section>
       </div>
       <div className={styles["technology-view__grid-info"]}>
 
-        <div className={styles["technology-view__info"]}>
+        <section className={styles["technology-view__info"]}>
           <h3>The terminology...</h3>
           <h1>{props.technologyData[technology].name}</h1>
-          <p>{props.technologyData[technology].description}</p>
-        </div>
+          <Description text={props.technologyData[technology].description} />
+        </section>
       </div>
       </div>
     </div>
