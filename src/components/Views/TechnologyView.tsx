@@ -1,9 +1,11 @@
 import { FC, useState } from "react";
 import { TechnologyData } from "../models/data-model";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import styles from "./TechnologyView.module.scss";
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   const [technology, setTechnology] = useState<number>(0);
+  const mediaQuery = useMediaQuery("(min-width: 90em)");
 
   const technologyChangeHandler = (technology: number) => {
     setTechnology(technology);
@@ -13,6 +15,8 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
     styles["technology-view__btn"],
     styles["technology-view__btn--active"],
   ];
+
+  const imgFormat = mediaQuery ? `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.portrait}` : `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.landscape}`
 
   return (
     <div className={styles["technology-view"]}>
@@ -26,7 +30,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
       <div className={styles["technology-view__grid-img"]}>
         <div className={styles["technology-view__img"]}>
           <img
-            src={`${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.landscape}`}
+            src={imgFormat}
             //src="../../assets/technology/image-moon.png"
             alt=""
           />
