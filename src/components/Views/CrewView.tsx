@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { CrewData } from "../models/data-model";
+import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
 import Title from "../Utilities/Title";
 import styles from "./CrewView.module.scss";
@@ -17,7 +18,7 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
   ];
 
   return (
-    <div className={styles["crew-view"]}>
+    <Container className={styles["crew-view"]}>
       <div className={styles["crew-view__grid-container"]}>
         <div className={styles["crew-view__grid-title"]}>
           <Title index="02" title="Meet your crew" />
@@ -60,7 +61,7 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
           </section>
         </div>
         </div>
-      </div>
+      </Container>
   );
 };
 

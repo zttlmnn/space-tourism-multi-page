@@ -1,19 +1,14 @@
 @import '../../index.scss';
 
 .destination-view {
-  padding-top: calc(var(--base-unit) * 3.5);
-  padding-left: var(--base-unit);
-  padding-right: var(--base-unit);
-  padding-bottom: calc(var(--base-unit) * 2.75);
+
   background: center/cover no-repeat
     url("../../assets/destination/background-destination-mobile.jpg");
     
     @media (min-width: $bp-tablet) {
       background: center/cover no-repeat
         url("../../assets/destination/background-destination-tablet.jpg");
-      padding-top: calc(var(--base-unit) * 5.5);
-      padding-left: calc(var(--base-unit) * 1.75);
-      padding-right: calc(var(--base-unit) * 1.75);
+
     }
 
 

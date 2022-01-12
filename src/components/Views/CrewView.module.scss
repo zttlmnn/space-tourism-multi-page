@@ -1,9 +1,6 @@
 @import '../../index.scss';
 
 .crew-view {
-  padding-top: calc(var(--base-unit) * 3.5);
-  padding-left: var(--base-unit);
-  padding-right: var(--base-unit);
   background: 
   center/cover no-repeat url('../../assets/crew/background-crew-mobile.jpg');
   
@@ -11,9 +8,6 @@
   @media (min-width: $bp-tablet) {
     background: 
     center/cover no-repeat url('../../assets/crew/background-crew-tablet.jpg');
-    padding-top: calc(var(--base-unit) * 5.5);
-    padding-left: calc(var(--base-unit) * 1.75);
-    padding-right: calc(var(--base-unit) * 1.75);
   }
 
   @media (min-width: $bp-desktop) {

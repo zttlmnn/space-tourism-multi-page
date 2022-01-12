@@ -4,6 +4,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import styles from "./TechnologyView.module.scss";
 import Title from "../Utilities/Title";
 import Description from "../Utilities/Description";
+import Container from "../Utilities/Container";
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   const [technology, setTechnology] = useState<number>(0);
@@ -21,7 +22,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   const imgFormat = mediaQuery ? `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.portrait}` : `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.landscape}`
 
   return (
-    <div className={styles["technology-view"]}>
+    <Container className={styles["technology-view"]}>
       <div className={styles["technology-view__grid-container"]}>
       <div className={styles["technology-view__grid-title"]}>
         <Title index="03" title="Space Launch 101" />
@@ -72,7 +73,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
         </section>
       </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

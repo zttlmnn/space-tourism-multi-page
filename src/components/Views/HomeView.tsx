@@ -1,10 +1,11 @@
 import React from "react";
+import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
 import styles from "./HomeView.module.scss";
 
 const HomeView = () => {
   return (
-    <div className={styles["home-view"]}>
+    <Container className={styles["home-view"]}>
       <div className={styles["home-view__flex-container"]}>
         <div className={styles["home-view__flex-item"]}>
           <h5>So, you want to travel to</h5>
@@ -20,7 +21,7 @@ const HomeView = () => {
           <button>Explore</button>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

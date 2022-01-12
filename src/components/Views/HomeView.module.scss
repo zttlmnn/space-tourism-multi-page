@@ -1,17 +1,10 @@
 @import '../../index.scss';
 
 .home-view {
-  // height of the header
-  padding-left: var(--base-unit);
-  padding-right: var(--base-unit);
-  // fixing height ???
-  height: 100vh;
   background: bottom/cover no-repeat url('../../assets/home/background-home-mobile.jpg');
 
 
   @media (min-width: $bp-tablet) {
-    padding-left: calc(var(--base-unit) * 1.75);
-    padding-right: calc(var(--base-unit) * 1.75);
     background: bottom/cover no-repeat url('../../assets/home/background-home-tablet.jpg');
   }
 
