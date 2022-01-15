@@ -14,7 +14,7 @@
     background: 
     center/cover no-repeat url('../../assets/crew/background-crew-desktop.jpg');
    }
-
+/* 
    &__grid-container {
     margin: 0 auto;
   
@@ -22,8 +22,8 @@
     @media (min-width: $bp-tablet) {
       display: grid;
       grid-template-rows: repeat(4, auto);
-/*       max-width: 57.3rem;    */
-    }
+      max-width: 57.3rem;    
+    
   
     @media (min-width: $bp-desktop) {
       grid-template-rows: repeat(3, auto);
@@ -31,7 +31,7 @@
       max-width: 110rem;
     }
   }
-  
+   */
   &__grid-title {
     @media (min-width: $bp-tablet) {
       grid-row: 1 / span 1;

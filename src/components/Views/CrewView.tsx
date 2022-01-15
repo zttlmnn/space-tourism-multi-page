@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { CrewData } from "../models/data-model";
 import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
+import Grid from "../Utilities/Grid";
 import Title from "../Utilities/Title";
 import styles from "./CrewView.module.scss";
 
@@ -19,7 +20,7 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
 
   return (
     <Container className={styles["crew-view"]}>
-      <div className={styles["crew-view__grid-container"]}>
+      <Grid>
         <div className={styles["crew-view__grid-title"]}>
           <Title index="02" title="Meet your crew" />
         </div>
@@ -57,10 +58,9 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
             <h3>{props.crewData[crew].role}</h3>
             <h1>{props.crewData[crew].name}</h1>
             <Description text={props.crewData[crew].bio} />
-
           </section>
         </div>
-        </div>
+        </Grid>
       </Container>
   );
 };

@@ -5,6 +5,7 @@ import styles from "./TechnologyView.module.scss";
 import Title from "../Utilities/Title";
 import Description from "../Utilities/Description";
 import Container from "../Utilities/Container";
+import Grid from "../Utilities/Grid";
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   const [technology, setTechnology] = useState<number>(0);
@@ -23,7 +24,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
 
   return (
     <Container className={styles["technology-view"]}>
-      <div className={styles["technology-view__grid-container"]}>
+      <Grid>
       <div className={styles["technology-view__grid-title"]}>
         <Title index="03" title="Space Launch 101" />
       </div>
@@ -72,7 +73,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           <Description text={props.technologyData[technology].description} />
         </section>
       </div>
-      </div>
+      </Grid>
     </Container>
   );
 };

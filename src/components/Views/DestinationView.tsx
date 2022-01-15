@@ -5,6 +5,7 @@ import styles from "./DestinationView.module.scss";
 import Title from "../Utilities/Title";
 import Description from "../Utilities/Description";
 import Container from "../Utilities/Container";
+import Grid from "../Utilities/Grid";
 
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
   props
@@ -31,7 +32,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
 
   return (
     <Container className={styles["destination-view"]}>
-      <div className={styles["destination-view__flex-container"]}>
+      <Grid>
         <div className={styles["destination-view__flex-item"]}>
       <Title index="01" title="Pick your destination" />
 
@@ -93,7 +94,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = (
             </div>
           </section>
         </div>
-      </div>
+      </Grid>
     </Container>
   );
 };

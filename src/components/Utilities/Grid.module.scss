@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.grid-container {
+  margin: 0 auto;
+
+        
+  @media (min-width: $bp-tablet) {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+/*       max-width: 57.3rem;    */
+  }
+
+  @media (min-width: $bp-desktop) {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
+    max-width: 110rem;
+  }
+}

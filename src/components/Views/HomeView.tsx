@@ -1,12 +1,13 @@
 import React from "react";
 import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
+import Grid from "../Utilities/Grid";
 import styles from "./HomeView.module.scss";
 
 const HomeView = () => {
   return (
     <Container className={styles["home-view"]}>
-      <div className={styles["home-view__flex-container"]}>
+      <Grid>
         <div className={styles["home-view__flex-item"]}>
           <h5>So, you want to travel to</h5>
           <h1>Space</h1>
@@ -20,7 +21,7 @@ const HomeView = () => {
         <div className={styles["home-view__flex-item"]}>
           <button>Explore</button>
         </div>
-      </div>
+      </Grid>
     </Container>
   );
 };

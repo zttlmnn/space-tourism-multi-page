@@ -15,28 +15,24 @@
     background: center/cover no-repeat
       url("../../assets/technology/background-technology-desktop.jpg");
   }
-
+/* 
   &__grid-container {
     margin: 0 auto;
     //    max-width: 110rem;
 
     @media (min-width: $bp-tablet) {
-      /*       grid-template-rows: repeat(4, auto);
- */ /*       max-width: 57.3rem;   
- */
+
     }
 
     @media (min-width: $bp-desktop) {
       display: grid;
-      /*       align-items: center;
- */
+
       grid-template-rows: 6rem 14rem 52.7rem;
       // auto (110rem) auto
       grid-template-columns: auto 16rem 47rem 16rem 31rem auto;
-      /*      max-width: 110rem; */
     }
   }
-
+ */
   &__grid-title {
     @media (min-width: $bp-desktop) {
       grid-column: 2 / -1;
