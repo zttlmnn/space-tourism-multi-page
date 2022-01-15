@@ -32,15 +32,15 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
         </div>
         <div className={styles["destination-view__flex-item"]}>
           <section className={styles["destination-view__btns"]}>
-            {props.destinationsData.map((destination, index) => (
+            {props.destinationsData.map((destination, i) => (
               <Button 
                 className={
-                  destinationState === index ? 
+                  destinationState === i ? 
                   cssBtnStyle.join(" ") : 
                   cssBtnStyle[0]
                 } 
-                key={index}
-                state={index}
+                key={i}
+                state={i}
                 text={destination.name}
               />
             ))}

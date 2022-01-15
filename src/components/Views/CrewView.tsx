@@ -33,15 +33,15 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
           </div>
           <div className={styles["crew-view__grid-btns"]}>
             <section className={styles["crew-view__btns"]}>
-              {props.crewData.map((_, index) => (
+              {props.crewData.map((_, i) => (
                 <Button 
                   className={
-                    crewState === index ? 
+                    crewState === i ? 
                     cssBtnStyle.join(" ") : 
                     cssBtnStyle[0]
                   }
-                  key={index}
-                  state={index}
+                  key={i}
+                  state={i}
                 />
               ))}
             </section>
