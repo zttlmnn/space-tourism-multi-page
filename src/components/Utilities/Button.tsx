@@ -1,4 +1,5 @@
-import React, { FC, useContext } from 'react'
+import React, { FC, useContext } from 'react';
+import styles from './Button.module.scss';
 import { TabAndSliderContext } from '../context/tabAndSlider-context';
 
 type BtnObj = {
@@ -10,14 +11,18 @@ type BtnObj = {
 const Button: FC<BtnObj> = props => {
   const {setState: setDestinationState} = useContext(TabAndSliderContext)
 
-
   const destinationHandler = (destination: number) => {
     setDestinationState(destination);
-
   };
+
+    
+  const cssStyle = [
+    styles.button,
+    props.className
+  ];
   return (
     <button 
-      className={props.className}
+      className={cssStyle.join(' ')}
       onClick={destinationHandler.bind(null, props.state)}
     >
       {props.text}

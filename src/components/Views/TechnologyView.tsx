@@ -35,7 +35,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
         <figure className={styles["technology-view__img"]}>
           <img
             src={imgFormat}
-            alt=""
+            alt={props.technologyData[technologyState].name}
           />
         </figure>
       </div>

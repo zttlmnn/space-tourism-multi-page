@@ -20,17 +20,14 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
   return (
     <Container className={styles["destination-view"]}>
       <Grid>
-        <div className={styles["destination-view__flex-item"]}>
       <Title index="01" title="Pick your destination" />
           <figure className={styles["destination-view__img"]}>
             <img
               src={`${process.env.PUBLIC_URL}../../${props.destinationsData[destinationState].images.png}`}
               //src="../../assets/destination/image-moon.png"
-              alt=""
+              alt={props.destinationsData[destinationState].name}
             />
           </figure>
-        </div>
-        <div className={styles["destination-view__flex-item"]}>
           <section className={styles["destination-view__btns"]}>
             {props.destinationsData.map((destination, i) => (
               <Button 
@@ -59,7 +56,6 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
               <h3>{props.destinationsData[destinationState].travel}</h3>
             </div>
           </section>
-        </div>
       </Grid>
     </Container>
   );

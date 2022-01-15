@@ -27,8 +27,8 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
             <img
               src={`${process.env.PUBLIC_URL}../../${props.crewData[crewState].images.png}`}
               //src="../../assets/crew/image-moon.png"
-              alt=""
-            />
+              alt={props.crewData[crewState].name}
+              />
           </figure>
           </div>
           <div className={styles["crew-view__grid-btns"]}>
