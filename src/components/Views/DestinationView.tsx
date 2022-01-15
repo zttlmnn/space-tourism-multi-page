@@ -7,22 +7,20 @@ import Description from "../Utilities/Description";
 import Container from "../Utilities/Container";
 import Grid from "../Utilities/Grid";
 import { TabAndSliderContext } from "../context/tabAndSlider-context";
+import Button from "../Utilities/Button";
 
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
-  const {state: destinationState, setState: setDestinationState} = useContext(TabAndSliderContext)
+  const {state: destinationState} = useContext(TabAndSliderContext)
 
-  console.log(props.destinationsData[0].images);
+  //console.log(props.destinationsData[0].images);
 
-  const destinationHandler = (destination: number) => {
-    setDestinationState(destination);
-  };
 
   const cssBtnStyle = [
     styles["destination-view__btn"],
     styles["destination-view__btn--active"],
   ];
 
-  console.log(destinationState);
+  console.log(cssBtnStyle);
 
   return (
     <Container className={styles["destination-view"]}>
@@ -40,6 +38,35 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
         </div>
         <div className={styles["destination-view__flex-item"]}>
           <section className={styles["destination-view__btns"]}>
+            <Button 
+              className={
+                destinationState === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              } 
+              state={0}
+              text="Moon" 
+                />
+            <Button 
+              className={
+                destinationState === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              } 
+              state={1}
+              text="Mars" 
+                />
+            <Button 
+              className={
+                destinationState === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              } 
+              state={2}
+              text="Europa" 
+                />
+            <Button 
+              className={
+                destinationState === 3 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              } 
+              state={3}
+              text="Titan" 
+                />
+{/* 
             <button
               onClick={destinationHandler.bind(null, 0)}
               className={
@@ -48,6 +75,8 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
             >
               Moon
             </button>
+             */}
+{/* 
             <button
               onClick={destinationHandler.bind(null, 1)}
               className={
@@ -71,7 +100,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
               }
             >
               Titan
-            </button>
+            </button> */}
           </section>
           <section className={styles["destination-view__description"]}>
             <h2>{props.destinationsData[destinationState].name}</h2>
