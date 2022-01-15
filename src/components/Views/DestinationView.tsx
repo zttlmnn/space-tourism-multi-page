@@ -10,16 +10,12 @@ import { TabAndSliderContext } from "../context/tabAndSlider-context";
 import Button from "../Utilities/Button";
 
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
-  const {state: destinationState} = useContext(TabAndSliderContext)
-
-  const destinationBtns = ["Moon", "Mars", "Europa", "Titan"];
+  const { state: destinationState } = useContext(TabAndSliderContext)
 
   const cssBtnStyle = [
     styles["destination-view__btn"],
     styles["destination-view__btn--active"],
   ];
-
-  console.log(cssBtnStyle);
 
   return (
     <Container className={styles["destination-view"]}>
@@ -36,14 +32,16 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
         </div>
         <div className={styles["destination-view__flex-item"]}>
           <section className={styles["destination-view__btns"]}>
-            {destinationBtns.map((destination, index) => (
+            {props.destinationsData.map((destination, index) => (
               <Button 
                 className={
-                  destinationState === index ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+                  destinationState === index ? 
+                  cssBtnStyle.join(" ") : 
+                  cssBtnStyle[0]
                 } 
                 key={index}
                 state={index}
-                text={destination}
+                text={destination.name}
               />
             ))}
           </section>

@@ -24,7 +24,7 @@ if (isLoading) {
     <p>LOADING...</p>
   </section>
 }
-
+console.log(data);
 return <CrewView crewData={data} />
 
 

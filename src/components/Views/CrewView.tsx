@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext } from "react";
 import { CrewData } from "../models/data-model";
 import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
@@ -6,15 +6,10 @@ import Grid from "../Utilities/Grid";
 import Title from "../Utilities/Title";
 import styles from "./CrewView.module.scss";
 import { TabAndSliderContext } from "../context/tabAndSlider-context";
+import Button from "../Utilities/Button";
 
 const CrewView: FC<{ crewData: CrewData[] }> = props => {
-  const {state: crewState, setState: setCrewState} = useContext(TabAndSliderContext)
-
-  //const [crew, setCrew] = useState<number>(0);
-
-  const crewChangeHandler = (crew: number) => {
-    setCrewState(crew);
-  };
+  const { state: crewState } = useContext(TabAndSliderContext)
 
   const cssBtnStyle = [
     styles["crew-view__btn"],
@@ -38,22 +33,17 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
           </div>
           <div className={styles["crew-view__grid-btns"]}>
             <section className={styles["crew-view__btns"]}>
-              <button
-                onClick={crewChangeHandler.bind(null, 0)}
-                className={crewState === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
-              />
-              <button
-                onClick={crewChangeHandler.bind(null, 1)}
-                className={crewState === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
-              />
-              <button
-                onClick={crewChangeHandler.bind(null, 2)}
-                className={crewState === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
-              />
-              <button
-                onClick={crewChangeHandler.bind(null, 3)}
-                className={crewState === 3 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
-              />
+              {props.crewData.map((_, index) => (
+                <Button 
+                  className={
+                    crewState === index ? 
+                    cssBtnStyle.join(" ") : 
+                    cssBtnStyle[0]
+                  }
+                  key={index}
+                  state={index}
+                />
+              ))}
             </section>
           </div>
         <div className={styles["crew-view__grid-info"]}>
