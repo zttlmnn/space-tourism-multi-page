@@ -1,16 +1,19 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 import { CrewData } from "../models/data-model";
 import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
 import Grid from "../Utilities/Grid";
 import Title from "../Utilities/Title";
 import styles from "./CrewView.module.scss";
+import { TabAndSliderContext } from "../context/tabAndSlider-context";
 
-const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
-  const [crew, setCrew] = useState<number>(0);
+const CrewView: FC<{ crewData: CrewData[] }> = props => {
+  const {state: crewState, setState: setCrewState} = useContext(TabAndSliderContext)
+
+  //const [crew, setCrew] = useState<number>(0);
 
   const crewChangeHandler = (crew: number) => {
-    setCrew(crew);
+    setCrewState(crew);
   };
 
   const cssBtnStyle = [
@@ -27,7 +30,7 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
         <div className={styles["crew-view__grid-img"]}>
           <figure className={styles["crew-view__img"]}>
             <img
-              src={`${process.env.PUBLIC_URL}../../${props.crewData[crew].images.png}`}
+              src={`${process.env.PUBLIC_URL}../../${props.crewData[crewState].images.png}`}
               //src="../../assets/crew/image-moon.png"
               alt=""
             />
@@ -37,27 +40,27 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
             <section className={styles["crew-view__btns"]}>
               <button
                 onClick={crewChangeHandler.bind(null, 0)}
-                className={crew === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
+                className={crewState === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
               />
               <button
                 onClick={crewChangeHandler.bind(null, 1)}
-                className={crew === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
+                className={crewState === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
               />
               <button
                 onClick={crewChangeHandler.bind(null, 2)}
-                className={crew === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
+                className={crewState === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
               />
               <button
                 onClick={crewChangeHandler.bind(null, 3)}
-                className={crew === 3 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
+                className={crewState === 3 ? cssBtnStyle.join(" ") : cssBtnStyle[0]}
               />
             </section>
           </div>
         <div className={styles["crew-view__grid-info"]}>
           <section className={styles["crew-view__info"]}>
-            <h3>{props.crewData[crew].role}</h3>
-            <h1>{props.crewData[crew].name}</h1>
-            <Description text={props.crewData[crew].bio} />
+            <h3>{props.crewData[crewState].role}</h3>
+            <h1>{props.crewData[crewState].name}</h1>
+            <Description text={props.crewData[crewState].bio} />
           </section>
         </div>
         </Grid>
@@ -66,3 +69,4 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
 };
 
 export default CrewView;
+

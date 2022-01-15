@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useContext } from "react";
 import { TechnologyData } from "../models/data-model";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import styles from "./TechnologyView.module.scss";
@@ -6,13 +6,18 @@ import Title from "../Utilities/Title";
 import Description from "../Utilities/Description";
 import Container from "../Utilities/Container";
 import Grid from "../Utilities/Grid";
+import { TabAndSliderContext } from "../context/tabAndSlider-context";
+
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
-  const [technology, setTechnology] = useState<number>(0);
+  const {state: technologyState, setState: setTechnologyState} = useContext(TabAndSliderContext);
+
+  //const [technology, setTechnology] = useState<number>(0);
   const mediaQuery = useMediaQuery("(min-width: 90em)");
 
+
   const technologyChangeHandler = (technology: number) => {
-    setTechnology(technology);
+    setTechnologyState(technology);
   };
 
   const cssBtnStyle = [
@@ -20,7 +25,9 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
     styles["technology-view__btn--active"],
   ];
 
-  const imgFormat = mediaQuery ? `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.portrait}` : `${process.env.PUBLIC_URL}../../${props.technologyData[technology].images.landscape}`
+  const imgFormat = mediaQuery ? 
+    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyState].images.portrait}` : 
+    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyState].images.landscape}`;
 
   return (
     <Container className={styles["technology-view"]}>
@@ -42,7 +49,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           <button
             onClick={technologyChangeHandler.bind(null, 0)}
             className={
-              technology === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              technologyState === 0 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
             }
           >
             1
@@ -50,7 +57,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           <button
             onClick={technologyChangeHandler.bind(null, 1)}
             className={
-              technology === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              technologyState === 1 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
             }
           >
             2
@@ -58,7 +65,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           <button
             onClick={technologyChangeHandler.bind(null, 2)}
             className={
-              technology === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
+              technologyState === 2 ? cssBtnStyle.join(" ") : cssBtnStyle[0]
             }
           >
             3
@@ -69,8 +76,8 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
 
         <section className={styles["technology-view__info"]}>
           <h3>The terminology...</h3>
-          <h1>{props.technologyData[technology].name}</h1>
-          <Description text={props.technologyData[technology].description} />
+          <h1>{props.technologyData[technologyState].name}</h1>
+          <Description text={props.technologyData[technologyState].description} />
         </section>
       </div>
       </Grid>
