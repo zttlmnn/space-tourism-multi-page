@@ -14,6 +14,13 @@ const Navigation: FC<Props> = (props) => {
     styles["navigation__link--active"],
   ];
 
+  const navBtns = [
+    { text: "Home", path: "/" },
+    { text: "Destination", path: "/destination" },
+    { text: "Crew", path: "/crew" },
+    { text: "Technology", path: "/technology" },
+  ];
+
   const mediaQueryTablet = useMediaQuery("(min-width: 48em)");
   const mediaQueryDesktop = useMediaQuery("(min-width: 90em)");
 
@@ -22,50 +29,24 @@ const Navigation: FC<Props> = (props) => {
     <nav className={styles.navigation}>
       <div className={styles["navigation__container"]}>
         <ul>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                !isActive ? styles["navigation__link"] : cssLinkActive.join(" ")
-              }
-              onClick={props.closeNavigation}
-            >
-              {(!mediaQueryTablet || mediaQueryDesktop) && <span>00</span>}Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/destination"
-              className={({ isActive }) =>
-                !isActive ? styles["navigation__link"] : cssLinkActive.join(" ")
-              }
-              onClick={props.closeNavigation}
-            >
-              {(!mediaQueryTablet || mediaQueryDesktop) && <span>01</span>}Destination
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/crew"
-              className={({ isActive }) =>
-                !isActive ? styles["navigation__link"] : cssLinkActive.join(" ")
-              }
-              onClick={props.closeNavigation}
-            >
-              {(!mediaQueryTablet || mediaQueryDesktop) && <span>02</span>}Crew
-            </NavLink>
-          </li>
-          <li>
-            <NavLink 
-              to="/technology"
-              className={({ isActive }) =>
-                !isActive ? styles["navigation__link"] : cssLinkActive.join(" ")
-              }
-              onClick={props.closeNavigation}
-            >
-              {(!mediaQueryTablet || mediaQueryDesktop) && <span>03</span>}Technology
-            </NavLink>
-          </li>
+          {navBtns.map(({ text, path }, i) => (
+            <li key={i}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  !isActive
+                    ? styles["navigation__link"]
+                    : cssLinkActive.join(" ")
+                }
+                onClick={props.closeNavigation}
+              >
+                {(!mediaQueryTablet || mediaQueryDesktop) && (
+                  <span>{`0${i.toString()}`}</span>
+                )}
+                {text}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
@@ -73,6 +54,3 @@ const Navigation: FC<Props> = (props) => {
 };
 
 export default Navigation;
-/* 
-<NavLink className={({ isActive }) => isActive ? "red" : "blue"} />
- */
