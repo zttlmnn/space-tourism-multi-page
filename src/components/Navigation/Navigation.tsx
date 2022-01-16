@@ -4,11 +4,11 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 import styles from "./Navigation.module.scss";
 
-type Props = {
+type NavObj = {
   closeNavigation: () => void;
 };
 
-const Navigation: FC<Props> = (props) => {
+const Navigation: FC<NavObj> = (props) => {
   const cssLinkActive = [
     styles["navigation__link"],
     styles["navigation__link--active"],
