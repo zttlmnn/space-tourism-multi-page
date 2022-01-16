@@ -19,10 +19,7 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
   return (
     <Container className={styles["crew-view"]}>
       <Grid>
-        <div className={styles["crew-view__grid-title"]}>
           <Title index="02" title="Meet your crew" />
-        </div>
-        <div className={styles["crew-view__grid-img"]}>
           <figure className={styles["crew-view__img"]}>
             <img
               src={`${process.env.PUBLIC_URL}../../${props.crewData[crewState].images.png}`}
@@ -30,8 +27,6 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
               alt={props.crewData[crewState].name}
               />
           </figure>
-          </div>
-          <div className={styles["crew-view__grid-btns"]}>
             <section className={styles["crew-view__btns"]}>
               {props.crewData.map((_, i) => (
                 <Button 
@@ -45,14 +40,11 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
                 />
               ))}
             </section>
-          </div>
-        <div className={styles["crew-view__grid-info"]}>
           <section className={styles["crew-view__info"]}>
             <h3>{props.crewData[crewState].role}</h3>
             <h1>{props.crewData[crewState].name}</h1>
             <Description text={props.crewData[crewState].bio} />
           </section>
-        </div>
         </Grid>
       </Container>
   );

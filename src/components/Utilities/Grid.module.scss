@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 0 var(--base-unit);
   display: grid;
-  max-width: 110rem;
+  max-width: 120rem;
   //grid-template-rows: repeat(4, auto);
   // title image btns section
 grid-template-rows: calc(var(--base-unit) * 1.75) auto auto auto;
@@ -17,8 +17,8 @@ grid-template-rows: calc(var(--base-unit) * 1.75) auto auto auto;
 
 
   @media (min-width: $bp-desktop) {
-      grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5)) auto auto auto;
-      column-gap: calc(var(--base-unit) * 5);
+      grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5));
+      column-gap: calc(var(--base-unit) * 7.5);
   /*       max-width: 57.3rem;    */
     
 /*     grid-template-rows: repeat(3, auto);
