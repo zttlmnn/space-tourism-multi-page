@@ -11,7 +11,7 @@ import Button from "../Utilities/Button";
 
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
-  const {state: technologyState, setState: setTechnologyState} = useContext(TabAndSliderContext);
+  const {state: technologyState } = useContext(TabAndSliderContext);
 
   //const [technology, setTechnology] = useState<number>(0);
   const mediaQuery = useMediaQuery("(min-width: 90em)");
@@ -28,18 +28,13 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   return (
     <Container className={styles["technology-view"]}>
       <Grid>
-      <div className={styles["technology-view__grid-title"]}>
         <Title index="03" title="Space Launch 101" />
-      </div>
-      <div className={styles["technology-view__grid-img"]}>
         <figure className={styles["technology-view__img"]}>
           <img
             src={imgFormat}
             alt={props.technologyData[technologyState].name}
           />
         </figure>
-      </div>
-      <div className={styles["technology-view__grid-btns"]}>
         <section className={styles["technology-view__btns"]}>
           {props.technologyData.map((_, i) => (
             <Button 
@@ -54,15 +49,11 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
             />
           ))}
         </section>
-      </div>
-      <div className={styles["technology-view__grid-info"]}>
-
         <section className={styles["technology-view__info"]}>
           <h3>The terminology...</h3>
           <h1>{props.technologyData[technologyState].name}</h1>
           <Description text={props.technologyData[technologyState].description} />
         </section>
-      </div>
       </Grid>
     </Container>
   );
