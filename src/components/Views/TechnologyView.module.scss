@@ -25,7 +25,19 @@
 
     @media (min-width: $bp-tablet) {
       height: clamp(31rem, 40vw, 52rem);
-      
+    } 
+
+    @media (min-width: $bp-desktop) {
+      grid-column: 3;
+      grid-row: 2;
+  //    width: 100%;
+      transform: translateX(6vw);
+/*       position: absolute;
+      width: 35vw;
+      height: 35vw;
+      top: 15vh;
+      right: 0;
+ */
     } 
 
     img {
@@ -53,10 +65,15 @@
 
     @media (min-width: $bp-desktop) {
       flex-direction: column;
+      align-items: flex-start;
       padding: 0;
       margin: 0;
       height: 30.4rem;
-      width: auto;
+      width: 16rem;
+
+      grid-column: 1;
+
+
     }
   }
   &__btn {
@@ -90,7 +107,16 @@
   }
 
   &__info {
-    text-align: center;
+/*     text-align: center;
+ */
+    @media (min-width: $bp-desktop) {
+      width: 47rem;
+   //   margin-right: 50rem;
+      grid-column: 2;
+
+
+
+    }
 
     h3 {
       height: calc(var(--base-unit) * 1.5);
@@ -107,6 +133,7 @@
       @media (min-width: $bp-desktop) {
         font-size: 1.6rem;
         text-align: left;
+
       }
     }
 

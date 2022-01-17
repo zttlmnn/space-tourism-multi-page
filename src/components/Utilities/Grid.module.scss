@@ -16,9 +16,11 @@
   
   
   @media (min-width: $bp-desktop) {
+
     max-width: 120rem;
       grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5));
-      column-gap: calc(var(--base-unit) * 7.5);
+     // grid-template-columns: 10rem;
+    //  column-gap: calc(var(--base-unit) * 7.5);
   /*       max-width: 57.3rem;    */
     
 /*     grid-template-rows: repeat(3, auto);

@@ -23,7 +23,7 @@
     }
 
     @media (min-width: $bp-desktop) {
-      margin-right: 0;
+      margin-right: calc(var(--base-unit) * 7.5);
       width: clamp(45rem, 45%, 50rem);
 
       grid-column: 1;
