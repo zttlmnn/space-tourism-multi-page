@@ -1,12 +1,18 @@
 @import '../../index.scss';
 
 .grid-container {
-  margin: 0 auto;
+/*   height: 75vh;
+ */  margin: 0 auto;
   padding: 0 var(--base-unit);
   display: grid;
+/*   align-items: center; */
+/*   align-items: center;
+ *//*   height: 50vh; */
+/*   height: 50vh; */
+
   //grid-template-rows: repeat(4, auto);
   // title image btns section
-  grid-template-rows: calc(var(--base-unit) * 1.75) auto auto auto;
+  grid-template-rows: calc(var(--base-unit) * 1.75) /* auto auto auto */;
   
   @media (min-width: $bp-tablet) {
     grid-template-rows: calc(var(--base-unit) * 3.25) auto auto auto;

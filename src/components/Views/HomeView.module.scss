@@ -11,7 +11,7 @@
   @media (min-width: $bp-desktop) {
     background: bottom/cover no-repeat url('../../assets/home/background-home-desktop.jpg');
 
-
+    padding-top: 25vh;
 
   }
 /* 
@@ -37,9 +37,26 @@
     }
   }
  */
+
+  &__intro {
+    //height: calc(var(--base-unit) * 13);
+  
+    grid-row: 1 / span 3;
+    
+    @media (min-width: $bp-tablet) {
+/*       height: calc(var(--base-unit) * 14);
+ */    }
+
+    @media (min-width: $bp-desktop) {
+      width: 80%;
+    }
+  }
+
   h5 {
-    margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
-    font-family: var(--ff-subheading-secondary);
+    height: calc(var(--base-unit) * 2);
+
+/*     margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
+ */    font-family: var(--ff-subheading-secondary);
     color: var(--clr-secondary);
     font-size: 1.6rem;
     font-weight: 400;
@@ -49,38 +66,74 @@
     text-align: center;
     
     @media (min-width: $bp-tablet) {
+      height: calc(var(--base-unit) * 6);
+      padding-top: 10rem;
+
       font-size: 2rem;
     }
 
     @media (min-width: $bp-desktop) {
       font-size: 2.8rem;
+      text-align: left;
     }
 
   }
   
   h1 {
-    margin-bottom: calc(var(--base-unit) * 1.75);
+    height: calc(var(--base-unit) * 5);
+
+/*     margin-bottom: calc(var(--base-unit) * 1.75); */
     font-size: 8rem;
     font-weight: 400;
     font-family: var(--ff-heading);
     text-align: center;
 
     @media (min-width: $bp-tablet) {
+      height: calc(var(--base-unit) * 7);
       font-size: 15rem;
+    }
+    @media (min-width: $bp-desktop) {
+      text-align: left;
     }
 
   }
 
-  button {
+  &__link-container {
+    height: calc(var(--base-unit) * 13);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $bp-tablet) {
+      height: calc(var(--base-unit) * 20);
+    }
+
+    @media (min-width: $bp-desktop) {
+      justify-content: flex-end;
+
+      grid-column: 2;
+      grid-row: 2;
+
+    }
+  }
+
+  &__link { 
     width: 15rem;
     height: 15rem;
     border-radius: 100%;
-    border: none;
     font-family: var(--ff-heading);
     font-size: 2rem;
     color: var(--clr-primary);
+    background: var(--clr-contrast);
     text-transform: uppercase;
-    margin: calc(var(--base-unit) * 3.5) 0 calc(var(--base-unit) * 2);
+    text-decoration: none;
+  //  margin: calc(var(--base-unit) * 3.5) 0 calc(var(--base-unit) * 2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 
     @media (min-width: $bp-tablet) {
       width: 24rem;
@@ -93,6 +146,8 @@
       width: 27.4rem;
       height: 27.4rem;
       margin: 0;
+
+
     }
   }
 

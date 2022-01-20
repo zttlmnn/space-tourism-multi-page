@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Container from "../Utilities/Container";
 import Description from "../Utilities/Description";
 import Grid from "../Utilities/Grid";
@@ -11,15 +12,20 @@ const text = "Let’s face it; if you want to go to space, you might as well gen
   return (
     <Container className={styles["home-view"]}>
       <Grid>
-        <div className={styles["home-view__flex-item"]}>
+        <section className={styles["home-view__intro"]}>
           <h5>So, you want to travel to</h5>
           <h1>Space</h1>
           <Description
             text={text}
           />
-        </div>
-        <div className={styles["home-view__flex-item"]}>
-          <button>Explore</button>
+        </section>
+        <div  className={styles["home-view__link-container"]}>
+        <Link 
+          to="/destination"
+          className={styles["home-view__link"]}
+          >
+          Explore
+        </Link>
         </div>
       </Grid>
     </Container>
