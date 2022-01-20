@@ -43,8 +43,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 var(--base-unit);
   }
   &__logo {
+    position: relative;
     width: 4rem;
     height: 4rem;
     background: center/cover url('../../assets/shared/logo.svg');
@@ -53,6 +57,22 @@
       width: calc(var(--base-unit) * 2);
       height: calc(var(--base-unit) * 2);
     }
+
+    @media (min-width: $bp-desktop) {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 36rem;
+        height: 1px;
+        top: 2.4rem;
+        left: 7.5rem;
+        background: var(--clr-stroke);
+        z-index: 25;
+      }
+
+    }
+
+    
   }
 
   &__nav-btn {
