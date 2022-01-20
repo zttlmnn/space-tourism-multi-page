@@ -11,8 +11,8 @@
   @media (min-width: $bp-desktop) {
     background: bottom/cover no-repeat url('../../assets/home/background-home-desktop.jpg');
 
-    padding-top: 25vh;
-
+/*     padding-top: 25vh;
+ */
   }
 /* 
   &__flex-container {
@@ -41,7 +41,7 @@
   &__intro {
     //height: calc(var(--base-unit) * 13);
   
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     
     @media (min-width: $bp-tablet) {
 /*       height: calc(var(--base-unit) * 14);
@@ -112,7 +112,7 @@
       justify-content: flex-end;
 
       grid-column: 2;
-      grid-row: 2;
+      grid-row: 4;
 
     }
   }

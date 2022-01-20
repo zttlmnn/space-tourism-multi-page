@@ -5,10 +5,11 @@
  */  margin: 0 auto;
   padding: 0 var(--base-unit);
   display: grid;
-/*   align-items: center; */
+  align-items: center;
 /*   align-items: center;
- *//*   height: 50vh; */
-/*   height: 50vh; */
+ *//*   height: 650vh; */
+  min-height: 65vh;
+
 
   //grid-template-rows: repeat(4, auto);
   // title image btns section
