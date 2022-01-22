@@ -19,8 +19,8 @@
 
   &__img {
     height: clamp(17rem, 45vw, 31rem);
-    width: calc(var(--base-unit) * 2 + 100%);
-    transform: translateX(calc(var(--base-unit) * -1));
+    width: calc(5vw * 2 + 100%);
+    transform: translateX(-5vw);
 
 
     @media (min-width: $bp-tablet) {

@@ -16,34 +16,36 @@
 
 
   @media (min-width: $bp-tablet) {
-    width: auto;
+/*     position: relative;
+ */    width: 60vw;
     height: 9.6rem;
-    padding: calc(var(--base-unit) * 1.5);
+    padding-top: calc(var(--base-unit) * 1.5);
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   @media (min-width: $bp-desktop) {
-    width: 60vw;
+    padding-right: 10vw;
   }
-  
+
   &__container {
 
-    ul {
       display: flex;
       flex-direction: column;
       gap: calc(var(--base-unit) * 1.5);
 
       @media (min-width: $bp-tablet) {
         flex-direction: row;
-      }
-      @media (min-width: $bp-tablet) {
-        justify-content: space-around;
-        gap: calc(var(--base-unit) * 2);
+        justify-content: space-between;
+/*         gap: calc(var(--base-unit) * 2);
+ */        
       }
       @media (min-width: $bp-desktop) {
-        width: 75rem;
+ /*        width: 80%; */
+     //   width: 75rem;
       }
 
-    }
+    
 
     li {
       // position value for the active indicator

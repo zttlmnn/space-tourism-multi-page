@@ -31,46 +31,68 @@
 }
 
 .header {
-  position: absolute;
-  width: 100%;
-  padding: var(--base-unit);
-
+/*   padding: var(--base-unit);
+  
   @media (min-width: $bp-tablet) {
-    padding: var(--base-unit) calc(var(--base-unit) * 1.75);
-  }
-
+    //padding: var(--base-unit) calc(var(--base-unit) * 1.75);
+    padding: 0;
+  } */
+  
   &__container {
+    width: 100%;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 0 var(--base-unit);
+   // max-width: 120rem;
+/*     margin: 0 auto;
+ */    //padding: 0 var(--base-unit);
+         padding: 0 5vw;
+
+    @media (min-width: $bp-desktop) {
+/*       padding-right: 0;
+      padding-left: 5vw; */
+
+      padding-right: 15vw;
+    }
   }
+
+  &__logo-container {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+  }
+
   &__logo {
-    position: relative;
+   position: absolute;
     width: 4rem;
     height: 4rem;
     background: center/cover url('../../assets/shared/logo.svg');
 
     @media (min-width: $bp-tablet) {
-      width: calc(var(--base-unit) * 2);
-      height: calc(var(--base-unit) * 2);
+      width: 4.8rem;
+      height: 4.8rem;
     }
 
     @media (min-width: $bp-desktop) {
+
       &::after {
         position: absolute;
         content: '';
-        width: 36rem;
+     //   width: calc(4.8rem + 25.5vw);
+        width: calc(32.5vw - 4.8rem);
         height: 1px;
-        top: 2.4rem;
-        left: 7.5rem;
+        top: 2.2rem;
+        left: 5vw;
+      left: calc(4.8rem + 5vw);
         background: var(--clr-stroke);
+
         z-index: 25;
       }
 
     }
+
 
     
   }

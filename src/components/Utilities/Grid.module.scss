@@ -1,37 +1,23 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .grid-container {
-/*   height: 75vh;
- */  margin: 0 auto;
-  padding: 0 var(--base-unit);
+  margin: 0 auto;
   display: grid;
   align-items: center;
-/*   align-items: center;
- *//*   height: 650vh; */
+
   min-height: 65vh;
 
+  width: 90vw;
 
-  //grid-template-rows: repeat(4, auto);
-  // title image btns section
   grid-template-rows: calc(var(--base-unit) * 1.75) /* auto auto auto */;
-  
+
   @media (min-width: $bp-tablet) {
     grid-template-rows: calc(var(--base-unit) * 3.25) auto auto auto;
-    /*       max-width: 57.3rem;    */
   }
-  
-  
-  
-  @media (min-width: $bp-desktop) {
 
-    max-width: 120rem;
-      grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5));
-     // grid-template-columns: 10rem;
-    //  column-gap: calc(var(--base-unit) * 7.5);
-  /*       max-width: 57.3rem;    */
-    
-/*     grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(2, auto); */
-  //  max-width: 110rem;
+  @media (min-width: $bp-desktop) {
+    width: 70vw;
+
+    grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5));
   }
 }

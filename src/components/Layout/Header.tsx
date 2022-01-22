@@ -17,14 +17,14 @@ const Header = () => {
 /*   const cssBtnStyles = [styles['header__nav-btn'], showNavigation ? styles['header__nav-btn--close'] : '']
  */
   return (
-    <header className={styles.header}>
-      <div className={styles['header__container']}>
-        <Link to="/" className={styles['header__logo']} />
+    <header className={styles['header__container']}>
+        <div className={styles['header__logo-container']} >
+          <Link to="/" className={styles['header__logo']} />
+        </div>
         {!mediaQuery && <button 
           className={!showNavigation ? styles['header__nav-btn'] : styles['header__nav-btn--close'] } 
           onClick={showNavigationHandler} />}
-      </div>
-      {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />}
+        {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />}
     </header>
   )
 }

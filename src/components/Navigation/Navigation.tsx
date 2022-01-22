@@ -27,8 +27,7 @@ const Navigation: FC<NavObj> = (props) => {
   console.log(cssLinkActive.join(" "));
   return (
     <nav className={styles.navigation}>
-      <div className={styles["navigation__container"]}>
-        <ul>
+        <ul className={styles["navigation__container"]}>
           {navBtns.map(({ text, path }, i) => (
             <li key={i}>
               <NavLink
@@ -48,7 +47,7 @@ const Navigation: FC<NavObj> = (props) => {
             </li>
           ))}
         </ul>
-      </div>
+
     </nav>
   );
 };
