@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { Link } from 'react-router-dom';
@@ -13,6 +13,10 @@ const Header = () => {
     setShowNavigation(prev => !prev)
   }
 
+/*   useEffect(() => {
+    if(mediaQuery) setShowNavigation(true)
+  }, [mediaQuery]) */
+
 
 /*   const cssBtnStyles = [styles['header__nav-btn'], showNavigation ? styles['header__nav-btn--close'] : '']
  */
@@ -24,7 +28,12 @@ const Header = () => {
         {!mediaQuery && <button 
           className={!showNavigation ? styles['header__nav-btn'] : styles['header__nav-btn--close'] } 
           onClick={showNavigationHandler} />}
-        {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />}
+ {/*        {(showNavigation || mediaQuery) && <Navigation closeNavigation={showNavigationHandler} />} */}
+        <Navigation 
+          closeNavigation={showNavigationHandler} 
+          showNavigation={showNavigation}
+        
+        />
     </header>
   )
 }
