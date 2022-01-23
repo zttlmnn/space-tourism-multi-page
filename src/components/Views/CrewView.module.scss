@@ -15,7 +15,10 @@
   }
 
   &__img {
+    position: relative;
+    overflow: hidden;
     height: clamp(17rem, 70vw, 53rem);
+    
     // height: 22rem;
     margin-top: calc(var(--base-unit) * 1.25);
     display: flex;
@@ -27,7 +30,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: clamp(50rem, 50vh, 80rem);
+      height: clamp(30rem, 45vh, 70rem);
       border-bottom: none;
 
       grid-row: -1;
@@ -36,17 +39,19 @@
 
     @media (min-width: $bp-desktop) {
       position: absolute;
-      height: 75vh;
-      left: auto;
+      height: 70vh;
+      left: 30%;
       bottom: 0;
-      right: 17%;
+ //right: 17%;
       border-bottom: none;
 
     }
 
     img {
-      width: auto;
+      position: absolute;
+      
       height: 100%;
+      width: auto;
   }
   }
   &__btns {
@@ -62,7 +67,7 @@
     @media (min-width: $bp-tablet) {
       height: calc(var(--base-unit) * 2);
       
-      grid-row: -2;
+      grid-row: 3;
     }
 
     @media (min-width: $bp-desktop) {
@@ -98,6 +103,10 @@
     height: calc(var(--base-unit) * 10);
 
     text-align: center;
+    @media (min-width: $bp-tablet) {
+      height: calc(var(--base-unit) * 2);
+    }
+
 
     @media (min-width: $bp-desktop) {
       margin: 0;

@@ -7,6 +7,27 @@ import Title from "../Utilities/Title";
 import styles from "./CrewView.module.scss";
 import { TabAndSliderContext } from "../context/tabAndSlider-context";
 import Button from "../Utilities/Button";
+import { motion, AnimatePresence } from "framer-motion";
+
+const variants = {
+  enter: {
+
+      x: 1000,
+      opacity: 0
+    },
+
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1
+  },
+  exit:  {
+      zIndex: 0,
+      x: -1000,
+      opacity: 0
+    }
+};
+
 
 const CrewView: FC<{ crewData: CrewData[] }> = props => {
   const { state: crewState } = useContext(TabAndSliderContext)
@@ -21,8 +42,17 @@ const CrewView: FC<{ crewData: CrewData[] }> = props => {
       <Grid>
           <Title index="02" title="Meet your crew" />
           <figure className={styles["crew-view__img"]}>
-            <img
+            <motion.img
+                          key={crewState}
               src={`${process.env.PUBLIC_URL}../../${props.crewData[crewState].images.png}`}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.5 }
+              }}
               //src="../../assets/crew/image-moon.png"
               alt={props.crewData[crewState].name}
               />
