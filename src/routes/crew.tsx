@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import Loading from '../components/Utilities/Loading';
 import CrewView from '../components/Views/CrewView';
 
 const Crew: FC = () => {
@@ -20,9 +21,7 @@ const [isLoading, setisLoading] = useState<boolean>(true)
   }, [])
 
 if (isLoading) {
-  return <section>
-    <p>LOADING...</p>
-  </section>
+  return <Loading />
 }
 console.log(data);
 return <CrewView crewData={data} />

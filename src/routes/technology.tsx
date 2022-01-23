@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import Loading from '../components/Utilities/Loading';
 import TechnologyView from '../components/Views/TechnologyView'
 
 const Technology: FC = () => {
@@ -20,9 +21,8 @@ const Technology: FC = () => {
   }, [])
 
 if (isLoading) {
-  return <section>
-    <p>LOADING...</p>
-  </section>
+  return <Loading />
+
 }
 
 return <TechnologyView technologyData={data} />

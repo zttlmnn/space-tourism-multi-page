@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
+import Loading from '../components/Utilities/Loading';
 import DestinationView from '../components/Views/DestinationView';
 /* import useFetchData from '../hooks/use-fetch';
  */
@@ -21,9 +22,8 @@ const [isLoading, setisLoading] = useState<boolean>(true)
   }, [])
 
 if (isLoading) {
-  return <section>
-    <p>LOADING...</p>
-  </section>
+  return <Loading />
+
 }
 
 
@@ -31,7 +31,8 @@ if (isLoading) {
 
 
 
-  return <DestinationView destinationsData={data} />
+
+ return <DestinationView destinationsData={data} />
 }
 
 export default Destination;
