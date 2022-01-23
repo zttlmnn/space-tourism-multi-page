@@ -9,24 +9,59 @@ import Grid from "../Utilities/Grid";
 import { TabAndSliderContext } from "../context/tabAndSlider-context";
 import Button from "../Utilities/Button";
 
+import { motion, AnimatePresence } from "framer-motion";
+
+const variants = {
+  enter: {
+
+      y: 300,
+      opacity: 0
+    },
+
+  center: {
+    zIndex: 1,
+    y: 0,
+    opacity: 1
+  },
+  exit:  {
+      zIndex: 0,
+      y: -700,
+      opacity: 0
+    }
+};
+
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
-  const { state: destinationState } = useContext(TabAndSliderContext)
+  const { state: destinationState } = useContext(TabAndSliderContext);
 
   const cssBtnStyle = [
     styles["destination-view__btn"],
     styles["destination-view__btn--active"],
   ];
 
+
   return (
     <Container className={styles["destination-view"]}>
       <Grid>
       <Title index="01" title="Pick your destination" />
           <figure className={styles["destination-view__img"]}>
-            <img
+            <AnimatePresence  >
+
+            <motion.img
+              key={destinationState}
               src={`${process.env.PUBLIC_URL}../../${props.destinationsData[destinationState].images.png}`}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.5 }
+              }}
+
               //src="../../assets/destination/image-moon.png"
               alt={props.destinationsData[destinationState].name}
-            />
+              />
+              </AnimatePresence>
           </figure>
           <section className={styles["destination-view__btns"]}>
             {props.destinationsData.map((destination, i) => (
