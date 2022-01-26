@@ -38,11 +38,11 @@ const variants = {
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   // const {page: technologyState } = useContext(TabAndSliderContext);
   const { page } = useContext(TabAndSliderContext);
-  const technologyState = page[0]
+  const technologyPage = page[0]
   const direction = page[1]
 
 
-  console.log(technologyState, direction);
+  console.log(technologyPage, direction);
 
   //const [technology, setTechnology] = useState<number>(0);
   const mediaQuery = useMediaQuery("(min-width: 90em)");
@@ -53,8 +53,8 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
   ];
 
   const imgFormat = mediaQuery ? 
-    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyState].images.portrait}` : 
-    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyState].images.landscape}`;
+    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyPage].images.portrait}` : 
+    `${process.env.PUBLIC_URL}../../${props.technologyData[technologyPage].images.landscape}`;
 
   return (
     <Container className={styles["technology-view"]}>
@@ -63,11 +63,11 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
         <figure className={styles["technology-view__img"]}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
-            key={technologyState}
+            key={technologyPage}
 
             src={imgFormat}
             custom={direction}
-            alt={props.technologyData[technologyState].name}
+            alt={props.technologyData[technologyPage].name}
             variants={variants}
             initial="enter"
             animate="center"
@@ -83,7 +83,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
           {props.technologyData.map((_, i) => (
             <Button 
               className={
-                technologyState === i ? 
+                technologyPage === i ? 
                 cssBtnStyle.join(" ") : 
                 cssBtnStyle[0]
               } 
@@ -95,8 +95,8 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
         </section>
         <section className={styles["technology-view__info"]}>
           <h3>The terminology...</h3>
-          <h1>{props.technologyData[technologyState].name}</h1>
-          <Description text={props.technologyData[technologyState].description} />
+          <h1>{props.technologyData[technologyPage].name}</h1>
+          <Description text={props.technologyData[technologyPage].description} />
         </section>
       </Grid>
     </Container>

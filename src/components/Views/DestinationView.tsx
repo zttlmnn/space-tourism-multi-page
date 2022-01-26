@@ -12,26 +12,30 @@ import Button from "../Utilities/Button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
-  enter: {
-
-      y: 300,
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
       opacity: 0
-    },
-
+    };
+  },
   center: {
     zIndex: 1,
-    y: 0,
+    x: 0,
     opacity: 1
   },
-  exit:  {
+  exit: (direction: number) => {
+    return {
       zIndex: 0,
-      y: -700,
+      x: direction < 0 ? 1000 : -1000,
       opacity: 0
-    }
+    };
+  }
 };
 
 const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
-  const { state: destinationState } = useContext(TabAndSliderContext);
+  const { page } = useContext(TabAndSliderContext);
+  const destinationPage = page[0]
+  const direction = page[1]
 
   const cssBtnStyle = [
     styles["destination-view__btn"],
@@ -44,11 +48,11 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
       <Grid>
       <Title index="01" title="Pick your destination" />
           <figure className={styles["destination-view__img"]}>
-            <AnimatePresence  >
-
+          <AnimatePresence initial={false} custom={direction}>
             <motion.img
-              key={destinationState}
-              src={`${process.env.PUBLIC_URL}../../${props.destinationsData[destinationState].images.png}`}
+              key={destinationPage}
+              src={`${process.env.PUBLIC_URL}../../${props.destinationsData[destinationPage].images.png}`}
+              custom={direction}
               variants={variants}
               initial="enter"
               animate="center"
@@ -59,7 +63,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
               }}
 
               //src="../../assets/destination/image-moon.png"
-              alt={props.destinationsData[destinationState].name}
+              alt={props.destinationsData[destinationPage].name}
               />
               </AnimatePresence>
           </figure>
@@ -67,28 +71,28 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
             {props.destinationsData.map((destination, i) => (
               <Button 
                 className={
-                  destinationState === i ? 
+                  destinationPage === i ? 
                   cssBtnStyle.join(" ") : 
                   cssBtnStyle[0]
                 } 
                 key={i}
-                state={i}
+                page={i}
                 text={destination.name}
               />
             ))}
           </section>
           <section className={styles["destination-view__description"]}>
-            <h2>{props.destinationsData[destinationState].name}</h2>
-              <Description text={props.destinationsData[destinationState].description}/>
+            <h2>{props.destinationsData[destinationPage].name}</h2>
+              <Description text={props.destinationsData[destinationPage].description}/>
           </section>
           <section className={styles["destination-view__details"]}>
             <div>
               <h4>Avg. distance</h4>
-              <h3>{props.destinationsData[destinationState].distance}</h3>
+              <h3>{props.destinationsData[destinationPage].distance}</h3>
             </div>
             <div>
               <h4>Est. travel time</h4>
-              <h3>{props.destinationsData[destinationState].travel}</h3>
+              <h3>{props.destinationsData[destinationPage].travel}</h3>
             </div>
           </section>
       </Grid>
