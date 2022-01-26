@@ -1,28 +1,36 @@
 import React, { FC, useState } from 'react';
 
 type ContextObj = {
-  state: number,
-  setState: (stateValue: number) => void
+  page: number[],
+  setPage: (page: number) => void
 }
 
 
 export const TabAndSliderContext = React.createContext<ContextObj>({
-  state: 0,
-  setState: () => {}
+  page: [0, 0],
+  setPage: () => {}
 })
 
 
 const TabAndSliderContextProvider: FC = props => {
-  const [state, setState] = useState<number>(0);
+  const [[page, direction], setPage] = useState<number[]>([0, 0]);
+/* 
+  const setPageHandler = (page: number, newDirection: number) => {
+    setPage([page, newDirection])
+  } */
 
-  const setStateHandler = (stateValue: number) => {
-    setState(stateValue)
+  const setPageHandler = (page: number) => {
+    setPage(prevPage  => {
+      if(prevPage[0] < page) return [page, 1];
+      else return [page, -1]
+    })
   }
 
+  console.log(page, direction);
 
   const contextValue={
-    state: state,
-    setState: setStateHandler
+    page: [page, direction],
+    setPage: setPageHandler
   }
 
   return (

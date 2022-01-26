@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useState } from "react";
 import { TechnologyData } from "../models/data-model";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import styles from "./TechnologyView.module.scss";
@@ -9,9 +9,40 @@ import Grid from "../Utilities/Grid";
 import { TabAndSliderContext } from "../context/tabAndSlider-context";
 import Button from "../Utilities/Button";
 
+import { motion, AnimatePresence } from "framer-motion";
+
+
+const variants = {
+  enter: (direction: number) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1
+  },
+  exit: (direction: number) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  }
+};
+
+
 
 const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
-  const {state: technologyState } = useContext(TabAndSliderContext);
+  // const {page: technologyState } = useContext(TabAndSliderContext);
+  const { page } = useContext(TabAndSliderContext);
+  const technologyState = page[0]
+  const direction = page[1]
+
+
+  console.log(technologyState, direction);
 
   //const [technology, setTechnology] = useState<number>(0);
   const mediaQuery = useMediaQuery("(min-width: 90em)");
@@ -30,10 +61,23 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
       <Grid>
         <Title index="03" title="Space Launch 101" />
         <figure className={styles["technology-view__img"]}>
-          <img
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={technologyState}
+
             src={imgFormat}
+            custom={direction}
             alt={props.technologyData[technologyState].name}
-          />
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 }
+            }}
+            />
+            </AnimatePresence>
         </figure>
         <section className={styles["technology-view__btns"]}>
           {props.technologyData.map((_, i) => (
@@ -44,7 +88,7 @@ const TechnologyView: FC<{ technologyData: TechnologyData[] }> = (props) => {
                 cssBtnStyle[0]
               } 
               key={i}
-              state={i}
+              page={i}
               text={(i + 1).toString()}
             />
           ))}
