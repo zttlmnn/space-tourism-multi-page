@@ -43,6 +43,7 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
   ];
 
 
+
   return (
     <Container className={styles["destination-view"]}>
       <Grid>
@@ -58,8 +59,8 @@ const DestinationView: FC<{ destinationsData: DestinationsData[] }> = props => {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.5 }
+                x: { type: "spring", stiffness: 600, damping: 30 },
+                opacity: { duration: 0.2 }
               }}
 
               //src="../../assets/destination/image-moon.png"
