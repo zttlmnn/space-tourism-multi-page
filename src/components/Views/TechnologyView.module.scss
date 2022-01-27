@@ -18,6 +18,7 @@
 
 
   &__img {
+
     height: clamp(17rem, 45vw, 31rem);
     width: calc(5vw * 2 + 100%);
     transform: translateX(-5vw);
@@ -28,9 +29,16 @@
     } 
 
     @media (min-width: $bp-desktop) {
-      grid-column: 3;
+      transform: translateX(0);
+      height: 100%;
+      width: 100%;
+/*       height: 100% */
+/*       width: 100%; */
+      /* width: clamp(31rem, 40vw, 52rem); */
+
+/*       grid-column: 3;
       grid-row: 4;
-      transform: translateX(5vw);
+      transform: translateX(5vw); */
     } 
 
     img {
@@ -38,6 +46,11 @@
 
       width: 100%;
       height: 100%;
+      @media (min-width: $bp-desktop) {
+/*         width: 30vw;
+        height: 30vw; 
+        transform: translateX(-50vw); */
+      }
   }
   }
 
@@ -59,15 +72,23 @@
     }
 
     @media (min-width: $bp-desktop) {
+
       flex-direction: column;
+      justify-content: flex-start;
       align-items: flex-start;
-      padding: 0;
+      gap: var(--base-unit);
+
+/*       align-items: flex-start;
+
+ */      height: 100%;
+      width: 100%;
+/*       padding: 0;
       margin: 0;
       height: 30.4rem;
-      width: 16rem;
+      width: 16rem; */
 
-      grid-column: 1;
-
+/*       grid-column: 1;
+ */
 
     }
   }
@@ -105,10 +126,10 @@
 /*     text-align: center;
  */
     @media (min-width: $bp-desktop) {
-      width: 47rem;
-   //   margin-right: 50rem;
-      grid-column: 2;
-
+/*       width: 47rem;
+ */   //   margin-right: 50rem;
+/*       grid-column: 2;
+ */
 
 
     }
@@ -150,4 +171,39 @@
     }
     
   }
+}
+
+// GRID SETTINGS
+
+section {
+    
+  // title
+&:first-child {
+/* background-color: rgba(0, 128, 0, 0.4);
+ */grid-row: 2;
+grid-column: 2 / span 10;
+}
+
+// btns
+&:nth-of-type(2) {
+/*   background-color: rgba(0, 0, 255, 0.4);
+ */  grid-row: 4 / span 7;
+  grid-column: 2 / span 1;
+
+}
+// text, body-copy
+&:nth-of-type(3) {
+/*   background-color: rgba(0, 255, 255, 0.4);
+ */  grid-row: 4 / span 7;
+  grid-column: 3 / span 5;
+
+  margin-left: 1vw;
+
+}
+}
+
+figure {
+/* background-color: rgba(255, 0, 0, 0.4);
+ */grid-row: 3 / span 9;
+grid-column: 9 / -1;
 }

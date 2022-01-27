@@ -37,12 +37,14 @@
     //padding: var(--base-unit) calc(var(--base-unit) * 1.75);
     padding: 0;
   } */
-  
+
   &__container {
 /*     overflow: hidden;
  */
-    width: 100%;
-    position: absolute;
+/*     width: 100%;
+ */   /*  position: absolute; */
+ position: fixed;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,11 +54,11 @@
          padding: 0 5vw;
 
     @media (min-width: $bp-desktop) {
+      top: 4rem;
 /*       padding-right: 0;
       padding-left: 5vw; */
-
-      padding-right: 15vw;
-    }
+/*       padding-right: 15vw;
+ */    }
   }
 
   &__logo-container {

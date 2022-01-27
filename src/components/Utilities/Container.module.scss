@@ -2,18 +2,15 @@
 
 
 .background-container {
-  padding-top: calc(var(--base-unit) * 3.5);
-
+/*   padding-top: calc(var(--base-unit) * 3.5);
+ */
   min-height: 100vh;
   overflow: hidden;
-
-
-
 
 /*   display: flex; */
 /* align-items: center; */
   @media (min-width: $bp-tablet) {
-    padding-top: calc(var(--base-unit) * 5.5);
-
+/*     padding-top: calc(var(--base-unit) * 5.5);
+ */
   }
 }

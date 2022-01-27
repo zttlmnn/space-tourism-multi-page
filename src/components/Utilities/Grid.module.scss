@@ -1,5 +1,5 @@
 @import "../../index.scss";
-
+/* 
 .grid-container {
   margin: 0 auto;
   display: grid;
@@ -9,7 +9,7 @@
 
   width: 90vw;
 
-  grid-template-rows: calc(var(--base-unit) * 1.75) /* auto auto auto */;
+  grid-template-rows: calc(var(--base-unit) * 1.75);
 
   @media (min-width: $bp-tablet) {
     grid-template-rows: calc(var(--base-unit) * 3.25) auto auto auto;
@@ -21,3 +21,21 @@
     grid-template-rows: repeat(3, calc(var(--base-unit) * 2.5));
   }
 }
+ */
+ .grid-container {
+  min-height: 100vh;
+
+  display: grid;
+  // 14rem = header/nav-container
+  // 1fre = padding
+  // 10 rem = title
+  grid-template-rows:  1fr 10rem repeat(9, 6.5rem) 1fr;
+  grid-template-columns: 1fr repeat(10, 11rem) 1fr;
+
+
+
+
+
+ }
+
+ 
