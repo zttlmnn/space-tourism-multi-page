@@ -6,9 +6,10 @@
   //10rem nav/heabder
   // 5rem title
     
-  grid-template-rows: 10rem .5fr  5rem repeat(10, minmax(7rem, 10.5rem)) 1fr;
+  grid-template-rows: 10rem .25fr 5rem repeat(6, minmax(7rem, 10.5rem)) 1fr;
   //  grid-template-columns: 1fr repeat(10, 8.5%) 1fr;
   grid-template-columns: 1fr repeat(10, minmax(3.2rem, 5.5rem)) 1fr;
+
 
 
 
