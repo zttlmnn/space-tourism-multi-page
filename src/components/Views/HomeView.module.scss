@@ -79,6 +79,8 @@
     grid-row: 7 / span 5;
     grid-column: 2 / span 10;
 
+
+
     @media (min-width: $bp-tablet) {
     }
 
@@ -109,8 +111,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: 0rem solid transparent;
 
 
+    @media (hover: hover) {
+      transition: var(--hover-transition);
+
+      &:hover {
+        outline: 8rem solid #ffffff1a;
+      }
+    }
 
     @media (min-width: $bp-tablet) {
       width: 24rem;

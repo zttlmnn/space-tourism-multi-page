@@ -63,6 +63,17 @@
     text-transform: uppercase;
     letter-spacing: 0.27rem;
 
+ 
+      
+      @media (hover: hover) {
+        transition: var(--hover-transition);
+
+        &:hover {
+          border-bottom: 3px solid var(--clr-hover);
+        }
+      }
+
+
     @media (min-width: $bp-tablet) {
       font-size: 1.6rem;
     }
@@ -71,6 +82,8 @@
       color: var(--clr-contrast);
       border-bottom: 3px solid var(--clr-contrast);
     }
+
+
   }
 
   &__description {

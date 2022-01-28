@@ -76,6 +76,15 @@
     border-radius: 100%;
     border: none;
 
+    @media (hover: hover) {
+      transition: var(--hover-transition);
+
+      &:hover {
+        opacity: 1;
+        background: var(--clr-hover);
+      }
+    }
+
     &--active {
       opacity: 1;
     }

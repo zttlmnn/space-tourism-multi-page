@@ -60,6 +60,15 @@
     border-radius: 100%;
     border: 1px solid hsla(0, 0%, 100%, 0.25);
 
+    
+    @media (hover: hover) {
+      transition: var(--hover-transition);
+      &:hover {
+        opacity: 1;
+        border: 1px solid var(--clr-contrast);
+      }
+    }
+
     &--active {
       color: var(--clr-primary);
       background: var(--clr-contrast);

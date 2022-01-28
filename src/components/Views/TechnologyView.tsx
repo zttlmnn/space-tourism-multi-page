@@ -20,7 +20,7 @@ const variants = {
     };
   },
   center: {
-    zIndex: 1,
+    zIndex: 0,
     x: 0,
     opacity: 1
   },
