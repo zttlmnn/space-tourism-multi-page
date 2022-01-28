@@ -11,52 +11,26 @@
   @media (min-width: $bp-desktop) {
     background: bottom/cover no-repeat url('../../assets/home/background-home-desktop.jpg');
 
-/*     padding-top: 25vh;
- */
   }
-/* 
-  &__flex-container {
-    max-width: 110rem;
-    margin: 0 auto;
-    padding-top: calc(var(--base-unit) * 3.5);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: $bp-tablet) {
-      padding-top: calc(var(--base-unit) * 8.25);
-    }
-    @media (min-width: $bp-desktop) {
-      padding-top: calc(var(--base-unit) * 16.25);
-
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
-  
-    }
-  }
- */
 
   &__intro {
-    //height: calc(var(--base-unit) * 13);
-  
-    grid-row: 1 / span 4;
-    
+      grid-row: 4 / span 3;
+      grid-column: 3 / span 8;
     @media (min-width: $bp-tablet) {
-/*       height: calc(var(--base-unit) * 14);
- */    }
+      grid-row: 3 / span 4;
+      grid-column: 3 / span 8;
+  }
 
     @media (min-width: $bp-desktop) {
-      width: 80%;
+      grid-row: 7 / span 6;
+      grid-column: 2 / span 5;
     }
   }
 
   h5 {
     height: calc(var(--base-unit) * 2);
-
-/*     margin: var(--base-unit) 0 calc(var(--base-unit) * 1.25);
- */    font-family: var(--ff-subheading-secondary);
+  font-family: var(--ff-subheading-secondary);
     color: var(--clr-secondary);
     font-size: 1.6rem;
     font-weight: 400;
@@ -66,8 +40,6 @@
     text-align: center;
     
     @media (min-width: $bp-tablet) {
-      height: calc(var(--base-unit) * 6);
-      padding-top: 10rem;
 
       font-size: 2rem;
     }
@@ -98,21 +70,26 @@
 
   }
 
+
   &__link-container {
-    height: calc(var(--base-unit) * 13);
     display: flex;
     justify-content: center;
     align-items: center;
 
+    grid-row: 7 / span 5;
+    grid-column: 2 / span 10;
+
     @media (min-width: $bp-tablet) {
-      height: calc(var(--base-unit) * 20);
     }
 
     @media (min-width: $bp-desktop) {
+      grid-row: 7 / span 6;
+      grid-column: 7 / span 5;
+
+  
       justify-content: flex-end;
 
-      grid-column: 2;
-      grid-row: 4;
+
 
     }
   }

@@ -31,12 +31,6 @@
 }
 
 .header {
-/*   padding: var(--base-unit);
-  
-  @media (min-width: $bp-tablet) {
-    //padding: var(--base-unit) calc(var(--base-unit) * 1.75);
-    padding: 0;
-  } */
 
   &__container {
 /*     overflow: hidden;
@@ -51,9 +45,16 @@
    // max-width: 120rem;
 /*     margin: 0 auto;
  */    //padding: 0 var(--base-unit);
-         padding: 0 5vw;
+         padding: 0 10vw;
 
-    @media (min-width: $bp-desktop) {
+
+    @media (min-width: $bp-tablet) {
+      padding: 0 5vw;
+
+    }
+      @media (min-width: $bp-desktop) {
+
+
       top: 4rem;
 /*       padding-right: 0;
       padding-left: 5vw; */
