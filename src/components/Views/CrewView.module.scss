@@ -16,7 +16,7 @@
 
   &__img {
     position: relative;
-  
+
     grid-row: 4 / span 2;
     grid-column: 3 / span 8;
 
@@ -30,13 +30,12 @@
       grid-column: 3 / span 8;
     }
 
-
     @media (min-width: $bp-desktop) {
       grid-row: 3 / -1;
       grid-column: 7 / span 5;
     }
-
   }
+
   &__btns {
     height: 100%;
     width: 100%;
@@ -47,15 +46,11 @@
 
     border-top: 1px solid var(--clr-stroke);
 
-
     grid-row: 6 / span 1;
     grid-column: 3 / span 8;
 
-
-
     @media (min-width: $bp-tablet) {
       border-top: none;
-
     }
 
     @media (min-width: $bp-desktop) {
@@ -104,22 +99,19 @@
       grid-row: 4 / span 2;
     }
 
-
     @media (min-width: $bp-desktop) {
-
       text-align: left;
-/*       max-width: 65rem;
- */
+
       grid-row: 6 / span 2;
       grid-column: 2 / span 6;
     }
-    
 
     h3 {
       height: calc(var(--base-unit) * 1.5);
       font-size: 1.6rem;
       font-family: var(--ff-subheading-primary);
       opacity: 0.5;
+
       @media (min-width: $bp-tablet) {
         height: calc(var(--base-unit) * 2);
         font-size: 2.4rem;
@@ -135,8 +127,8 @@
 
     h1 {
       height: calc(var(--base-unit) * 2);
-
       font-size: 2.4rem;
+
       @media (min-width: $bp-tablet) {
         height: calc(var(--base-unit) * 2.75);
 

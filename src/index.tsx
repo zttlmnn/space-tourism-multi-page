@@ -6,12 +6,13 @@ import Home from "./routes/home";
 import Destination from "./routes/destination";
 import Crew from "./routes/crew";
 import Technology from "./routes/technology";
-import TabAndSliderContextProvider from "./components/context/tabAndSlider-context";
+import PageContextProvider from "./components/context/page-context";
+import Error from "./components/Utilities/Error";
 
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
-    <TabAndSliderContextProvider>
+    <PageContextProvider>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -21,14 +22,14 @@ render(
           <Route
             path="*"
             element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
+              <main>
+                <Error />
               </main>
             }
           />
         </Route>
       </Routes>
-    </TabAndSliderContextProvider>
+    </PageContextProvider>
   </BrowserRouter>,
   rootElement
 );

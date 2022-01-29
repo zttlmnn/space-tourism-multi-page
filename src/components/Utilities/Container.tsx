@@ -1,18 +1,14 @@
-import React, { FC } from 'react'
-import styles from './Container.module.scss';
+import { FC } from "react";
+import styles from "./Container.module.scss";
 
-const Container: FC<{ className?: string }>  = (props) => {
-  
-  const cssStyle = [
-    styles['background-container'],
-    props.className
-  ];
+type ContainerObj = {
+  className?: string;
+};
 
-  return (
-    <div className={cssStyle.join(' ')}>
-      {props.children}
-    </div>
-  )
-}
+const Container: FC<ContainerObj> = (props) => {
+  const cssStyle = [styles["background-container"], props.className];
 
-export default Container
+  return <div className={cssStyle.join(" ")}>{props.children}</div>;
+};
+
+export default Container;

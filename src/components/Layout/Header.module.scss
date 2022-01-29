@@ -1,5 +1,4 @@
-
-@import '../../index.scss';
+@import "../../index.scss";
 
 %nav-btn {
   position: relative;
@@ -10,70 +9,55 @@
   background: var(--clr-secondary);
   cursor: pointer;
 
-  transition: all .5s ease-in-out;
+  transition: var(--hover-transition);
 
   @media (min-width: $bp-tablet) {
     display: none;
   }
-
 }
-%line {
-  content: '';
-  position: absolute;
 
+%line {
+  content: "";
+  position: absolute;
+  left: 0;
   width: var(--base-unit);
   height: 3px;
   background: var(--clr-secondary);
 
-  left: 0;
-
-  transition: all .4s ease-in-out;
+  transition: var(--hover-transition);
 }
 
 .header {
-
   &__container {
-/*     overflow: hidden;
- */
-    width: 100%;
     position: absolute;
-/*  position: fixed;
- */
+    width: 100%;
+    padding: 0 10vw;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-   // max-width: 120rem;
-/*     margin: 0 auto;
- */    //padding: 0 var(--base-unit);
-         padding: 0 10vw;
-
 
     @media (min-width: $bp-tablet) {
       padding: 0 5vw;
-
     }
-      @media (min-width: $bp-desktop) {
-
-
+    @media (min-width: $bp-desktop) {
       top: 4rem;
-/*       padding-right: 0;
-      padding-left: 5vw; */
-/*       padding-right: 15vw;
- */    }
+    }
   }
 
   &__logo-container {
     width: 10rem;
     height: 10rem;
+
     display: flex;
     align-items: center;
   }
 
   &__logo {
-   position: absolute;
+    position: absolute;
     width: 4rem;
     height: 4rem;
-    background: center/cover url('../../assets/shared/logo.svg');
+    background: center/cover url("../../assets/shared/logo.svg");
 
     @media (min-width: $bp-tablet) {
       width: 4.8rem;
@@ -81,34 +65,23 @@
     }
 
     @media (min-width: $bp-desktop) {
-
       &::after {
+        content: "";
         position: absolute;
-        content: '';
-     //   width: calc(4.8rem + 25.5vw);
+        top: 2.2rem;
+        left: calc(4.8rem + 5vw);
         width: calc(32.5vw - 4.8rem);
         height: 1px;
-        top: 2.2rem;
-        left: 5vw;
-      left: calc(4.8rem + 5vw);
         background: var(--clr-stroke);
 
         z-index: 25;
       }
-
     }
-
-
-    
   }
 
   &__nav-btn {
     @extend %nav-btn;
-/* 
-    @media (min-width: $bp-tablet) {
-      display: none;
-    }
- */
+
     &::before {
       @extend %line;
       top: calc(3px * -3);
@@ -116,31 +89,23 @@
 
     &::after {
       @extend %line;
-
       top: calc(3px * 3);
     }
     &--close {
       @extend %nav-btn;
-
       background: transparent;
 
       &::before {
         @extend %line;
         top: calc(3px * -3);
         transform: rotate(135deg) translate(25%, -210%);
-
       }
-  
+
       &::after {
         @extend %line;
         top: calc(3px * 3);
         transform: rotate(-135deg) translate(25%, 210%);
-
       }
     }
   }
-
 }
-
-
-

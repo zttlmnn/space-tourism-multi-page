@@ -47,8 +47,7 @@ function dataReducer(state: DataState, action: DataAction) {
   }
 
 }
-/*  */
-/* function useFetchData(fetchFunction: (query: string) => Data[]) { */
+
 function useFetchData(fetchFunction: () => Promise<any>) {
   const [state, dispatch] = useReducer(dataReducer, initialState);
 

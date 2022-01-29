@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
-import useMediaQuery from "../../hooks/useMediaQuery";
-
 import styles from "./Navigation.module.scss";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { MEDIA_QUERY_TABLET } from "../../config";
+import { MEDIA_QUERY_DESKTOP } from "../../config";
 import { motion } from "framer-motion";
 
 type NavObj = {
@@ -31,10 +32,8 @@ const Navigation: FC<NavObj> = (props) => {
     { text: "Technology", path: "/technology" },
   ];
 
-  const mediaQueryTablet = useMediaQuery("(min-width: 48em)");
-  const mediaQueryDesktop = useMediaQuery("(min-width: 90em)");
-
-  console.log(cssLinkActive.join(" "));
+  const mediaQueryTablet = useMediaQuery(`${MEDIA_QUERY_TABLET}`);
+  const mediaQueryDesktop = useMediaQuery(`${MEDIA_QUERY_DESKTOP}`);
 
   const navigation = (
     <ul className={styles["navigation__container"]}>

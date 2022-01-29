@@ -1,23 +1,20 @@
 :root {
   --base-unit: 2.4rem;
 
-  --ff-heading: 'Bellefair', serif;
-  --ff-subheading-primary: 'Bellefair', serif;
-  --ff-subheading-secondary: 'Barlow Condensed', sans-serif;
-  --ff-btn: 'Barlow Condensed', sans-serif;
-  --ff-nav: 'Barlow Condensed', sans-serif;
-  --ff-body-text: 'Barlow', sans-serif;
+  --ff-heading: "Bellefair", serif;
+  --ff-subheading-primary: "Bellefair", serif;
+  --ff-subheading-secondary: "Barlow Condensed", sans-serif;
+  --ff-btn: "Barlow Condensed", sans-serif;
+  --ff-nav: "Barlow Condensed", sans-serif;
+  --ff-body-text: "Barlow", sans-serif;
 
   --clr-primary: #0b0d17;
-  --clr-secondary: #D0D6F9;
+  --clr-secondary: #d0d6f9;
   --clr-contrast: #ffffff;
-  --clr-stroke: #383B4B;
+  --clr-stroke: #383b4b;
   --clr-hover: #979797;
 
-  --hover-transition: all .4s ease-in-out;
-
-/*   --tablet-breakpoint: 768px;
- */
+  --hover-transition: all 0.4s ease-in-out;
 }
 // 768 px / 1.6 = 48em
 $bp-tablet: 48em;
@@ -46,28 +43,15 @@ body {
   color: var(--clr-contrast);
   font-weight: 400;
 }
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: inherit;
   text-transform: uppercase;
-} 
-
-/* 
-h1, h3 {
-  font-family: var(--ff-heading);
 }
 
-h2, button {
-  color: var(--clr-secondary);
-  font-family: var(--ff-subheading-secondary);
-}
-
-h4 {
-  font-family: var(--ff-subheading-secondary);
-}
-
-*/
-
-p { 
+p {
   font-family: var(--ff-body-text);
   color: var(--clr-secondary);
   text-align: center;
@@ -80,24 +64,7 @@ li {
 img {
   display: block;
   position: absolute;
-object-fit: cover;
-width: 100%;
-height: 100%;
-
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-
-
-/* 
-
-
-
-
-
-
-font-family: 'Barlow', sans-serif;
-font-family: 'Barlow Condensed', sans-serif;
-font-family: 'Bellefair', serif;
-font-family: 'Libre Baskerville', serif;
-
-
-*/

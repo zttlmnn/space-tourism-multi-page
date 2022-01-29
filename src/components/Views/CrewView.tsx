@@ -1,13 +1,13 @@
 import { FC, useContext } from "react";
+import styles from "./CrewView.module.scss";
 import { CrewData } from "../models/data-model";
+import { PageContext } from "../context/page-context";
+import { motion, AnimatePresence } from "framer-motion";
 import Container from "../Utilities/Container";
-import Description from "../Utilities/Description";
 import Grid from "../Utilities/Grid";
 import Title from "../Utilities/Title";
-import styles from "./CrewView.module.scss";
-import { TabAndSliderContext } from "../context/tabAndSlider-context";
 import Button from "../Utilities/Button";
-import { motion, AnimatePresence } from "framer-motion";
+import Description from "../Utilities/Description";
 
 const variants = {
   enter: (direction: number) => {
@@ -31,7 +31,7 @@ const variants = {
 };
 
 const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
-  const { page } = useContext(TabAndSliderContext);
+  const { page } = useContext(PageContext);
   const crewPage = page[0];
   const direction = page[1];
 
@@ -58,7 +58,6 @@ const CrewView: FC<{ crewData: CrewData[] }> = (props) => {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
-              //src="../../assets/crew/image-moon.png"
               alt={props.crewData[crewPage].name}
             />
           </AnimatePresence>

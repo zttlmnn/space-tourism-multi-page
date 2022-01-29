@@ -10,11 +10,7 @@
   grid-row: 3;
   grid-column: 2 / span 10;
 
- // width: 57.3rem;
-/*   margin: 0 auto;
- */
   @media (min-width: $bp-tablet) {
-
     justify-content: flex-start;
     font-size: 2rem;
   }
@@ -36,13 +32,3 @@
     margin-left: calc(var(--base-unit) * 0.5);
   }
 }
-
-/* &:first-child {
-  grid-row: 2;
-  grid-column: 2 / span 10;
-
-  @media (min-width: $bp-desktop) {
-    grid-row: 3;
-    grid-column: 2 / span 10;
-  }
-} */

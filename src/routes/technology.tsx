@@ -10,22 +10,17 @@ const Technology: FC = () => {
     const fetchData = async () => {
       const response = await fetch('/data.json')
       const data = await response.json()
-      console.log(data.technology[0]);
       setData(data.technology)
       setisLoading(false)
-
     }
     fetchData()
-    
-
   }, [])
 
 if (isLoading) {
   return <Loading />
-
 }
 
-return <TechnologyView technologyData={data} />
+  return <TechnologyView technologyData={data} />
 }
 
 export default Technology;

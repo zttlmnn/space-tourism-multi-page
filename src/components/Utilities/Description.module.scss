@@ -1,28 +1,21 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .text {
- font-size: 1.5rem;
+  font-size: 1.5rem;
   line-height: 2.5rem;
-
-  max-width: 57.3rem;   
+  max-width: 57.3rem;
   margin: 0 auto;
-
-/*   padding-bottom: calc(var(--base-unit) * 1.5);
- */  
 
   @media (min-width: $bp-tablet) {
     font-size: 1.6rem;
     line-height: 2.8rem;
-
- //   padding: var(--base-unit) 0 calc(var(--base-unit) * 2.25);
   }
 
   @media (min-width: $bp-desktop) {
     margin: 0;
-    max-width: 44rem;   
+    max-width: 44rem;
     font-size: 1.8rem;
     line-height: 3.2rem;
-
     text-align: left;
   }
 }
