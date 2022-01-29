@@ -1,8 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import Loading from '../components/Utilities/Loading';
 import DestinationView from '../components/Views/DestinationView';
-/* import useFetchData from '../hooks/use-fetch';
- */
+
 const Destination: FC = () => {
 const [data, setData] = useState([]);
 const [isLoading, setisLoading] = useState<boolean>(true)
@@ -14,13 +13,17 @@ const [isLoading, setisLoading] = useState<boolean>(true)
       console.log(data.destinations[0]);
       setData(data.destinations)
       setisLoading(false)
-
     }
     fetchData()
     
 
   }, [])
+/* 
+if (isLoading) {
+  return <Loading />
 
+}
+ */
 if (isLoading) {
   return <Loading />
 

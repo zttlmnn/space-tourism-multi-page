@@ -1,7 +1,28 @@
-@import '../../index.scss';
+@import "../../index.scss";
+
+%nav-indicator {
+  display: flex;
+  align-items: center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    width: 4px;
+    height: calc(var(--base-unit) * 1.25);
+    background: transparent;
+    transition: var(--hover-transition);
+
+    @media (min-width: $bp-tablet) {
+      right: auto;
+      width: 100%;
+      height: 3px;
+      bottom: calc(var(--base-unit) * -1.75);
+    }
+  }
+}
 
 .navigation {
-
   position: fixed;
   top: 0;
   right: 0;
@@ -14,11 +35,10 @@
   padding-top: calc(var(--base-unit) * 5);
   padding-left: calc(var(--base-unit) * 1.25);
 
-
-
   @media (min-width: $bp-tablet) {
-/*     position: relative;
- */    width: 60vw;
+    /*     position: relative;
+ */
+    width: 60vw;
     height: 9.6rem;
     padding-top: calc(var(--base-unit) * 1.5);
     padding-left: 5vw;
@@ -32,36 +52,31 @@
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--base-unit) * 1.5);
 
-      display: flex;
-      flex-direction: column;
-      gap: calc(var(--base-unit) * 1.5);
-
-      @media (min-width: $bp-tablet) {
-        flex-direction: row;
-        justify-content: space-between;
-/*         gap: calc(var(--base-unit) * 2);
- */        
-      }
-      @media (min-width: $bp-desktop) {
-
- /*        width: 80%; */
-     //   width: 75rem;
-      }
-
-    
+    @media (min-width: $bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      /*         gap: calc(var(--base-unit) * 2);
+ */
+    }
+    @media (min-width: $bp-desktop) {
+      /*        width: 80%; */
+      //   width: 75rem;
+    }
 
     li {
       // position value for the active indicator
       position: relative;
     }
-
   }
 
   &__link {
     font-family: var(--ff-nav);
     font-size: 1.6rem;
-    letter-spacing: .27rem;
+    letter-spacing: 0.27rem;
     text-transform: uppercase;
     color: var(--clr-contrast);
     text-decoration: none;
@@ -77,67 +92,30 @@
     span {
       display: inline-block;
       font-weight: 700;
-      letter-spacing: .27rem;
+      letter-spacing: 0.27rem;
       width: 1.8rem;
-      margin-right: calc(var(--base-unit) * .5);
+      margin-right: calc(var(--base-unit) * 0.5);
     }
+
+    @extend %nav-indicator;
 
     @media (hover: hover) {
-      
-      display: flex;
-      align-items: center;
-      
-      &::after {
-        position: absolute;
-        content: '';
-        right: 0;
-        width: 4px;
-        height: calc(var(--base-unit) * 1.25);
-        background: transparent;
-        transition: var(--hover-transition);
-        
-          @media (min-width: $bp-tablet) {
-            right: auto;
-            width: 100%;
-            height: 3px;
-            bottom: calc(var(--base-unit) * -1.75);
-          }
-        }   
-        
-        &:hover {
-          &::after {
-            background: var(--clr-hover);
-    
-
-          } 
-        }
-    }
-   
-
-    &--active {
-      display: flex;
-      align-items: center;
-
-      &::after {
-        position: absolute;
-        content: '';
-        right: 0;
-        width: 4px;
-        height: calc(var(--base-unit) * 1.25);
-        background: var(--clr-contrast);
-
-        @media (min-width: $bp-tablet) {
-          right: auto;
-          width: 100%;
-          height: 3px;
-          bottom: calc(var(--base-unit) * -1.75);
+      &:hover {
+        &::after {
+          background: var(--clr-hover);
         }
       }
     }
+
+    &--active {
+      @extend %nav-indicator;
+
+      display: flex;
+      align-items: center;
+
+      &::after {
+        background: var(--clr-contrast);
+      }
+    }
   }
-
-
-
-
-
 }
